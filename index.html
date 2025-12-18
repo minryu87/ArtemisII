@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>달 탐험 대모험!</title>
+  <title>탄희의 달 탐험 대모험!</title>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -41,61 +41,61 @@
       }, []);
 
       const earthCards = [
-        {id:'birth',title:'달의 탄생',emoji:'🌙',color:'from-blue-900/50 to-blue-800/50',short:'45억 년 전 거대 충돌!',
-          detail:{desc:'약 45억 년 전, 화성만 한 크기의 행성 "테이아"가 아기 지구와 충돌했어요!\n\n이 거대한 충돌로 엄청난 양의 암석 조각들이 우주로 튀어나갔고, 이 조각들이 모여서 달이 되었답니다.\n\n처음 달이 생겼을 때는 지구에서 겨우 22,500km 떨어져 있었어요. 지금은 384,400km나 떨어져 있죠!\n\n달은 매년 3.8cm씩 지구에서 멀어지고 있어요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Lunar_libration_with_phase_Oct_2007_450px.gif/220px-Lunar_libration_with_phase_Oct_2007_450px.gif',vid:'https://www.youtube.com/embed/6SrsZVdU740'}},
-        {id:'size',title:'크기 비교',emoji:'📏',color:'from-purple-900/50 to-purple-800/50',short:'달은 지구의 1/4!',
-          detail:{desc:'달의 지름은 약 3,474km로 지구(12,742km)의 약 1/4 크기예요.\n\n재미있는 사실!\n\n하늘에서 태양과 달이 거의 같은 크기로 보이죠? 태양은 달보다 400배 크지만, 400배 더 멀리 있어서 같은 크기로 보이는 거예요!\n\n이 우연 덕분에 멋진 개기일식을 볼 수 있답니다.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/Bz9D6xba9Og'}},
-        {id:'tide',title:'밀물과 썰물',emoji:'🌊',color:'from-green-900/50 to-green-800/50',short:'달이 바다를 움직여요!',
-          detail:{desc:'달의 중력이 지구의 바닷물을 끌어당겨서 밀물과 썰물이 생겨요!\n\n달 쪽 바다는 달에게 끌려서 불룩해지고, 반대쪽도 원심력 때문에 불룩해져요.\n\n그래서 하루에 두 번씩 밀물과 썰물이 일어나죠.\n\n보름달이나 초승달 때는 조수 차이가 가장 커요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tide_type.svg/300px-Tide_type.svg.png',vid:'https://www.youtube.com/embed/3RdkXs8BibE'}},
-        {id:'quake',title:'문퀘이크',emoji:'🌋',color:'from-orange-900/50 to-orange-800/50',short:'달에도 지진이!',
-          detail:{desc:'달에도 지진이 있어요! "문퀘이크"라고 불러요.\n\n아폴로 우주비행사들이 설치한 지진계가 28번의 문퀘이크를 기록했어요.\n\n지구의 지진은 몇 초~몇 분이면 끝나지만, 문퀘이크는 무려 1시간까지 계속돼요!\n\n달에는 물이 없어서 진동이 쉽게 사라지지 않거든요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Apollo_11_Lunar_Laser_Ranging_Experiment.jpg/220px-Apollo_11_Lunar_Laser_Ranging_Experiment.jpg',vid:'https://www.youtube.com/embed/VW2xRR75lKE'}}
+        {id:'birth',title:'달의 탄생',emoji:'🌙',color:'from-blue-900/50 to-blue-800/50',short:'탄희야, 45억 년 전 충돌 이야기야!',
+          detail:{desc:'탄희야, 약 45억 년 전에 화성만 한 행성 "테이아"가 아기 지구랑 쾅 부딪혔단다.\n\n그때 튀어나온 돌 조각들이 우주에 둥둥 떠다니다가 서로 붙어서 달이 되었어.\n\n처음엔 달이 지구와 22,500km밖에 안 떨어져 있었는데 지금은 384,400km나 멀어졌지.\n\n지금도 매년 3.8cm씩 살금살금 멀어지고 있다는 게 참 신기하지?',img:'https://photojournal.jpl.nasa.gov/jpeg/PIA12166.jpg',vid:'https://www.youtube.com/embed/UIKmSQqp8W'}},
+        {id:'size',title:'크기 비교',emoji:'📏',color:'from-purple-900/50 to-purple-800/50',short:'달은 지구의 4분의 1 크기야!',
+          detail:{desc:'탄희야, 달의 지름은 3,474km라서 지구(12,742km)의 딱 4분의 1 정도야.\n\n근데 태양은 달보다 400배나 크고 400배 멀리 있어서 하늘에서 비슷하게 보인단다.\n\n그래서 탄희가 좋아하는 멋진 개기일식을 볼 수 있는 거지!',img:'https://photojournal.jpl.nasa.gov/jpeg/PIA00405.jpg',vid:'https://www.youtube.com/embed/cxrLRbkOwKs'}},
+        {id:'tide',title:'밀물과 썰물',emoji:'🌊',color:'from-green-900/50 to-green-800/50',short:'탄희야, 달이 바다를 당겨!',
+          detail:{desc:'탄희야, 달의 중력이 지구 바닷물을 살짝 끌어당겨서 밀물과 썰물이 생기는 거야.\n\n달 쪽 바다는 불룩 올라오고 반대쪽도 원심력 때문에 따라 올라오지.\n\n그래서 하루에 두 번씩 물이 들고 나고, 보름달이나 초승달 때는 차이가 더 커진단다!',img:'https://upload.wikimedia.org/wikipedia/commons/3/3b/Tidal_bulge.png',vid:'https://www.youtube.com/embed/tcGEjzt_4is'}},
+        {id:'quake',title:'문퀘이크',emoji:'🌋',color:'from-orange-900/50 to-orange-800/50',short:'달에도 흔들림이 있단다!',
+          detail:{desc:'탄희야, 달에도 지진처럼 흔들림이 있어서 문퀘이크라고 불러.\n\n아폴로 우주비행사들이 세운 지진계가 무려 28번이나 감지했대.\n\n지구 지진은 금방 끝나지만 달은 물과 공기가 없어서 진동이 한 시간이나 이어질 때도 있어!',img:'https://www.hq.nasa.gov/alsj/a11/AS11-40-5949HR.jpg',vid:'https://www.youtube.com/embed/s3bffub-9UM'}}
       ];
 
       const mythCards = [
-        {id:'selene',title:'셀레네',country:'🇬🇷 그리스',color:'from-amber-900/50 to-yellow-900/50',short:'은빛 마차의 달 여신!',
-          detail:{desc:'셀레네는 그리스 신화의 달의 여신이에요.\n\n매일 밤 두 마리의 하얀 말이 끄는 은빛 마차를 타고 하늘을 가로질러요.\n\n오빠 헬리오스(태양의 신)가 낮에 하늘을 지나면, 셀레네가 밤을 맡아요.\n\n셀레네는 양치기 엔디미온과 사랑에 빠졌어요. 제우스가 엔디미온을 영원히 잠들게 해서, 셀레네는 매일 밤 그를 보러 갔다고 해요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/BIuO6g5mx7Q'}},
-        {id:'artemis',title:'아르테미스',country:'🏹 그리스',color:'from-pink-900/50 to-purple-900/50',short:'NASA 이름의 유래!',
-          detail:{desc:'아르테미스는 사냥과 달의 여신이에요. 태양의 신 아폴로의 쌍둥이 자매죠!\n\n활과 화살의 명수로, 숲속 동물들의 수호자예요.\n\nNASA가 새 달 탐사를 "아르테미스"라고 이름 지은 이유가 있어요.\n\n아폴로(오빠)가 처음 달에 갔으니, 이번엔 여동생 차례라는 뜻이죠!\n\n아르테미스로 최초의 여성이 달에 갈 거예요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Diane_de_Versailles_Leochares.jpg/170px-Diane_de_Versailles_Leochares.jpg',vid:'https://www.youtube.com/embed/yvBqkcKhKNg'}},
-        {id:'tsuku',title:'츠쿠요미',country:'🇯🇵 일본',color:'from-rose-900/50 to-red-900/50',short:'달을 읽는 자!',
-          detail:{desc:'츠쿠요미(月読)는 일본 신화의 달의 신이에요.\n\n이름은 "달(月)을 읽는(読) 자"라는 뜻이에요.\n\n창조신 이자나기의 오른쪽 눈에서 태어났어요.\n\n태양의 여신 아마테라스, 바다의 신 스사노오와 함께 가장 중요한 세 신이에요.\n\n옛날 일본 사람들은 달을 보고 날짜와 계절을 알았어요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/rAw8U5e_-ZI'}},
-        {id:'change',title:'창어',country:'🇨🇳 중국',color:'from-yellow-900/50 to-amber-900/50',short:'중추절의 주인공!',
-          detail:{desc:'창어(嫦娥)는 중국 신화에서 달에 사는 여신이에요.\n\n전설에 따르면, 창어가 불사의 약을 먹고 달로 날아갔다고 해요.\n\n지금도 달에서 옥토끼와 함께 살고 있대요!\n\n매년 음력 8월 15일 중추절에 중국 사람들은 달을 보며 창어를 기억해요.\n\n중국의 달 탐사선 이름도 "창어"예요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/l8UIXfp0Bxg'}}
+        {id:'selene',title:'셀레네',country:'🇬🇷 그리스',color:'from-amber-900/50 to-yellow-900/50',short:'탄희야, 셀레네가 은빛 마차로 달려와!',
+          detail:{desc:'탄희야, 셀레네는 그리스의 달 여신이라서 매일 밤 은빛 마차를 타고 하늘을 달린단다.\n\n태양의 신 헬리오스가 낮을 지키면 셀레네가 밤을 맡아서 빛을 밝혀 줘.\n\n그녀가 사랑한 양치기 엔디미온은 영원히 잠들어 있는데, 셀레네가 매일 밤 몰래 찾아간다는 이야기가 있지.',img:'https://upload.wikimedia.org/wikipedia/commons/6/6f/Selene_en_Endymion_Rijksmuseum_SK-A-4210.jpeg',vid:'https://www.youtube.com/embed/kpe1ulASeig'}},
+        {id:'artemis',title:'아르테미스',country:'🏹 그리스',color:'from-pink-900/50 to-purple-900/50',short:'아폴로의 쌍둥이 동생 아르테미스야!',
+          detail:{desc:'탄희야, 아르테미스는 사냥과 달을 지키는 여신이고 태양의 신 아폴로와 쌍둥이 자매야.\n\n활과 화살을 완벽하게 다루면서 숲속 동물들을 지켜 준단다.\n\nNASA가 새 달 탐사를 아르테미스라고 부른 건 이번엔 여동생 차례라는 뜻이라서 더 멋지지?',img:'https://upload.wikimedia.org/wikipedia/commons/4/4f/Artemis_Braschi_Louvre_Ma550.jpg',vid:'https://www.youtube.com/embed/xt-TE4je1Qc'}},
+        {id:'tsuku',title:'츠쿠요미',country:'🇯🇵 일본',color:'from-rose-900/50 to-red-900/50',short:'일본에서 달을 읽는 신이야!',
+          detail:{desc:'탄희야, 츠쿠요미(月読)는 일본 신화에서 달을 읽고 시간을 세던 신이야.\n\n창조신 이자나기의 오른쪽 눈에서 태어났다고 하고, 태양 여신 아마테라스와 늘 짝을 이뤘대.\n\n옛 일본 사람들은 츠쿠요미 덕분에 달빛을 보며 날짜와 계절을 알아냈지.',img:'https://upload.wikimedia.org/wikipedia/commons/2/26/Shinto-Tsukuyomi-no-Mikoto-Old-Artwork.png',vid:'https://www.youtube.com/embed/aRLSLbY31no'}},
+        {id:'change',title:'창어',country:'🇨🇳 중국',color:'from-yellow-900/50 to-amber-900/50',short:'중국 달에 사는 창어 이야기야!',
+          detail:{desc:'탄희야, 창어(嫦娥)는 중국 신화에서 달에 올라간 여신이야.\n\n불사의 약을 먹고 하늘로 날아가 옥토끼와 함께 산다고 해.\n\n그래서 중추절에 달을 보며 창어를 떠올리고, 중국의 달 탐사선 이름도 창어로 지었단다.',img:'https://upload.wikimedia.org/wikipedia/commons/2/2e/The_Moon_Goddess_Chang_E_-_Unidentified_artist%2C_after_Tang_Yin.jpg',vid:'https://www.youtube.com/embed/rhR2zNJm7lo'}}
       ];
 
       const apolloCards = [
-        {id:'a11',title:'아폴로 11호',emoji:'🌙',color:'from-orange-900/50 to-red-900/50',short:'인류 최초 달 착륙!',
-          detail:{desc:'1969년 7월 20일, 닐 암스트롱이 인류 최초로 달에!\n\n"이것은 한 사람에게는 작은 한 걸음이지만, 인류에게는 위대한 도약입니다."\n\n암스트롱과 버즈 올드린은 달에서 2시간 31분 동안 걸어다녔어요.\n\n성조기를 꽂고, 21.5kg의 달 돌을 가져왔죠.\n\n전 세계 6억 명이 TV로 지켜봤어요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/200px-Aldrin_Apollo_11_original.jpg',vid:'https://www.youtube.com/embed/S9HdPi9Ikhk'}},
-        {id:'a13',title:'아폴로 13호',emoji:'🆘',color:'from-red-900/50 to-rose-900/50',short:'극적인 생환!',
-          detail:{desc:'1970년 4월, 아폴로 13호는 대재앙을 만났어요.\n\n"휴스턴, 문제가 생겼습니다."\n\n산소 탱크가 폭발! 전기와 산소가 부족해졌어요!\n\nNASA 과학자들과 우주비행사들이 힘을 합쳐 기적적으로 문제를 해결했어요.\n\n결국 세 명 모두 무사히 지구로 돌아왔어요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Apollo13-load_on_deck_-_GPN-2000-001313.jpg/220px-Apollo13-load_on_deck_-_GPN-2000-001313.jpg',vid:'https://www.youtube.com/embed/C2w6pe0kxag'}},
-        {id:'stats',title:'아폴로 기록',emoji:'📊',color:'from-blue-900/50 to-indigo-900/50',short:'놀라운 숫자들!',
-          detail:{desc:'아폴로 프로그램의 기록!\n\n🚀 총 17번의 아폴로 미션\n🌙 6번의 달 착륙 성공\n👨‍🚀 12명이 달을 걸었어요\n🪨 382kg 달 암석 수집\n⏱️ 80시간 이상 달 표면 활동\n🚗 아폴로 15~17호는 월면차도!\n\n마지막 달 방문은 1972년 아폴로 17호!\n\n50년 만에 아르테미스가 다시 갑니다!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Apollo_17_Lunar_Roving_Vehicle.jpg/220px-Apollo_17_Lunar_Roving_Vehicle.jpg',vid:'https://www.youtube.com/embed/xc1SyiF8Qok'}},
-        {id:'legacy',title:'아폴로의 유산',emoji:'🎁',color:'from-purple-900/50 to-pink-900/50',short:'우리 생활 속 기술!',
-          detail:{desc:'아폴로 기술이 지금도 쓰여요!\n\n💻 컴퓨터 소형화 → 스마트폰!\n🍳 테프론 코팅 → 프라이팬!\n👟 우주복 기술 → 운동화 쿠션!\n🩺 달 사진 기술 → CAT 스캔!\n💧 우주 정수기 → 정수 필터!\n\n아폴로에 1달러 투자 → 7~14달러 가치 창출!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Apollo_11_Crew.jpg/220px-Apollo_11_Crew.jpg',vid:'https://www.youtube.com/embed/4XvVs4sHlJc'}}
+        {id:'a11',title:'아폴로 11호',emoji:'🌙',color:'from-orange-900/50 to-red-900/50',short:'탄희야, 인류가 처음 달에 닿은 순간이야!',
+          detail:{desc:'탄희야, 1969년 7월 20일 닐 암스트롱이 달에 첫 발을 디뎠단다.\n\n그때 남긴 말 기억하지? "이것은 한 사람에게는 작은 한 걸음이지만, 인류에게는 위대한 도약입니다."\n\n암스트롱과 올드린이 2시간 31분 동안 걸으며 깃발을 꽂고 달 돌 21.5kg을 챙겼어.\n\n전 세계 6억 명이 그 장면을 숨죽이며 봤대.',img:'https://upload.wikimedia.org/wikipedia/commons/a/a3/Buzz_Aldrin_and_the_US_flag_on_the_Moon%2C_AS11-40-5875.jpg',vid:'https://www.youtube.com/embed/RMINSD7MmT4'}},
+        {id:'a13',title:'아폴로 13호',emoji:'🆘',color:'from-red-900/50 to-rose-900/50',short:'위기였지만 모두 살아 돌아왔어!',
+          detail:{desc:'탄희야, 1970년 4월 아폴로 13호에서 "휴스턴, 문제가 생겼습니다"라는 말이 나왔어.\n\n산소 탱크가 폭발해서 전기와 공기가 부족했는데 과학자들과 우주비행사들이 머리를 맞대고 해결했지.\n\n결국 세 명 모두 무사히 지구에 귀환했단다.',img:'https://upload.wikimedia.org/wikipedia/commons/9/9c/Apollo_13_Lunar_Module_Aquarius.jpg',vid:'https://www.youtube.com/embed/WXXuppdewV8'}},
+        {id:'stats',title:'아폴로 기록',emoji:'📊',color:'from-blue-900/50 to-indigo-900/50',short:'아폴로 기록을 같이 세어보자!',
+          detail:{desc:'탄희야, 아폴로 프로그램은 총 17번이나 진행됐고 그중 6번이 달 착륙에 성공했어.\n\n12명의 우주인이 달을 걸었고 382kg의 달 암석을 모았지.\n\n달 표면 활동만 80시간이 넘었고 아폴로 15~17호는 월면차도까지 탔단다.\n\n마지막은 1972년 아폴로 17호였고, 이제 50년 만에 아르테미스가 다시 가는 거야!',img:'https://images-assets.nasa.gov/image/AS17-134-20384/AS17-134-20384~orig.jpg',vid:'https://www.youtube.com/embed/0lZ8iDAmX9o'}},
+        {id:'legacy',title:'아폴로의 유산',emoji:'🎁',color:'from-purple-900/50 to-pink-900/50',short:'아폴로 기술이 지금도 곁에 있어!',
+          detail:{desc:'탄희야, 아폴로 덕분에 컴퓨터가 작아져서 지금 우리가 스마트폰을 쓰는 거야.\n\n테프론 프라이팬, 운동화 쿠션, CAT 스캔, 정수 필터 같은 것들도 다 영향을 받았단다.\n\n그때 1달러를 투자하면 7~14달러 가치가 돌아왔다니 정말 대단하지?',img:'https://upload.wikimedia.org/wikipedia/commons/3/3d/Wide_angle_view_of_Mission_Control_Center_during_Apollo_14_transmission_%28S71-17122%29.jpg',vid:'https://www.youtube.com/embed/vl6jn-DdafM'}}
       ];
 
       const rockets = [
-        {id:'las',name:'탈출 시스템',color:'#FFF',top:'0%',h:'8%',desc:'비상 탈출 로켓!'},
-        {id:'orion',name:'오리온',color:'#F5F5F5',top:'8%',h:'12%',desc:'우주인 4명 탑승!'},
-        {id:'icps',name:'2단 로켓',color:'#F97316',top:'20%',h:'15%',desc:'달 방향 추진!'},
-        {id:'core',name:'연료탱크',color:'#EA580C',top:'35%',h:'40%',desc:'73만 갤런 연료!'},
-        {id:'boost',name:'부스터',color:'#E5E5E5',top:'50%',h:'25%',desc:'추력 75% 담당!'},
-        {id:'eng',name:'RS-25',color:'#374151',top:'75%',h:'8%',desc:'셔틀 엔진 4개!'}
+        {id:'las',name:'탈출 시스템',color:'#FFF',top:'0%',h:'8%',desc:'탄희야, 비상 상황이면 이 탈출 시스템이 우주인을 순식간에 안전하게 빼낸단다!'},
+        {id:'orion',name:'오리온',color:'#F5F5F5',top:'8%',h:'12%',desc:'오리온 캡슐에는 우주인 4명이 편하게 타고 탄희에게 인사할 거야.'},
+        {id:'icps',name:'2단 로켓',color:'#F97316',top:'20%',h:'15%',desc:'이 2단 로켓이 우주선을 다시 힘껏 밀어서 달 쪽으로 궤도를 바꿔 줘.'},
+        {id:'core',name:'연료탱크',color:'#EA580C',top:'35%',h:'40%',desc:'여기 거대한 연료탱크에 73만 갤런의 연료가 들어가서 엄청난 힘을 만든단다.'},
+        {id:'boost',name:'부스터',color:'#E5E5E5',top:'50%',h:'25%',desc:'두 개의 부스터가 전체 추력의 75%를 담당하니 정말 든든하지, 탄희야?'},
+        {id:'eng',name:'RS-25',color:'#374151',top:'75%',h:'8%',desc:'RS-25 엔진 4개가 모여서 셔틀 때부터 쌓은 경험을 그대로 보여줘.'}
       ];
 
       const missions = [
-        {title:'발사!',desc:'케네디 우주센터 발사!',emoji:'🔥'},
-        {title:'지구 궤도',desc:'우주선 점검!',emoji:'🌍'},
-        {title:'달로!',desc:'4일간 여행 시작!',emoji:'✨'},
-        {title:'달 뒷면',desc:'45만km 도달!',emoji:'🌙'},
-        {title:'귀환',desc:'태평양 착수!',emoji:'🪂'}
+        {title:'발사!',desc:'케네디 우주센터에서 카운트다운을 외치며 하늘로 쏘아 올리자!',emoji:'🔥'},
+        {title:'지구 궤도',desc:'궤도를 돌면서 모든 시스템을 꼼꼼히 확인해, 탄희야!',emoji:'🌍'},
+        {title:'달로!',desc:'4일 동안 달까지 여행하며 창밖으로 우주 풍경을 보여줄게.',emoji:'✨'},
+        {title:'달 뒷면',desc:'45만km를 지나 달 뒷면까지 돌아보는 특별한 순간이지.',emoji:'🌙'},
+        {title:'귀환',desc:'태평양에 착수하면서 "탄희야, 집에 간다!"라고 외칠 거야.',emoji:'🪂'}
       ];
 
       const quizzes = [
-        {q:'SLS 로켓은 무엇보다 높을까요?',o:['자유의 여신상','에펠탑','남산타워'],a:0},
-        {q:'달까지 며칠?',o:['1일','4일','30일'],a:1},
-        {q:'오리온에 몇 명?',o:['2명','4명','10명'],a:1},
-        {q:'달에 첫 발을 내디딘 사람?',o:['버즈 올드린','닐 암스트롱','마이클 콜린스'],a:1},
-        {q:'그리스 달의 여신?',o:['아테나','셀레네','헤라'],a:1}
+        {q:'탄희야, SLS 로켓은 무엇보다 더 높았을까?',o:['자유의 여신상','에펠탑','남산타워'],a:0},
+        {q:'탄희야, 달까지 가는 데 며칠 걸렸을까?',o:['1일','4일','30일'],a:1},
+        {q:'오리온 캡슐에는 우주인이 몇 명 탈까?',o:['2명','4명','10명'],a:1},
+        {q:'탄희야, 달에 첫 발을 내디딘 사람은 누구였을까?',o:['버즈 올드린','닐 암스트롱','마이클 콜린스'],a:1},
+        {q:'그리스에서 달의 여신으로 불린 존재는 누구일까?',o:['아테나','셀레네','헤라'],a:1}
       ];
 
       const Modal = ({card,onClose,isMyth}) => (
@@ -121,17 +121,17 @@
             <h3 className="font-bold text-sm">{card.title}</h3>
           </div>
           <p className="text-xs text-gray-300">{card.short}</p>
-          <p className="text-xs text-yellow-400 mt-1">👆 클릭!</p>
+          <p className="text-xs text-yellow-400 mt-1">👆 탄희야, 눌러봐!</p>
         </button>
       );
 
       const Home = () => (
         <div className="text-center space-y-5">
           <div className="text-5xl animate-bounce">🚀</div>
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">달 탐험 대모험!</h1>
-          <p className="text-blue-200">아르테미스 2호와 함께!</p>
+          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">탄희의 달 탐험 대모험!</h1>
+          <p className="text-blue-200">탄희야, 우리 아르테미스 2호랑 신나게 떠나보자!</p>
           <div className="grid grid-cols-2 gap-3">
-            {[{id:'earth',icon:'🌍',name:'지구와 달',c:'from-blue-600 to-cyan-600'},{id:'myth',icon:'🏛️',name:'달의 신화',c:'from-purple-600 to-pink-600'},{id:'apollo',icon:'🚀',name:'아폴로',c:'from-orange-600 to-red-600'},{id:'artemis',icon:'🌙',name:'아르테미스',c:'from-indigo-600 to-purple-600'}].map(s=>
+            {[{id:'earth',icon:'🌍',name:'탄희의 지구·달 이야기',c:'from-blue-600 to-cyan-600'},{id:'myth',icon:'🏛️',name:'탄희가 듣는 달 신화',c:'from-purple-600 to-pink-600'},{id:'apollo',icon:'🚀',name:'탄희와 아폴로',c:'from-orange-600 to-red-600'},{id:'artemis',icon:'🌙',name:'탄희의 아르테미스',c:'from-indigo-600 to-purple-600'}].map(s=>
               <button key={s.id} onClick={()=>setSection(s.id)} className={`p-4 bg-gradient-to-br ${s.c} rounded-xl hover:scale-105 transition-transform`}>
                 <div className="text-3xl mb-2">{s.icon}</div>
                 <div className="font-bold text-sm">{s.name}</div>
@@ -139,16 +139,16 @@
             )}
           </div>
           <div className="p-4 bg-yellow-500/20 rounded-xl border border-yellow-500/50">
-            <p className="text-yellow-300 font-bold">⏰ 발사 예정</p>
-            <p className="text-xl font-bold text-white mt-1">2026년 4월!</p>
+            <p className="text-yellow-300 font-bold">⏰ 탄희랑 약속한 발사</p>
+            <p className="text-xl font-bold text-white mt-1">2026년 4월을 기다리자!</p>
           </div>
         </div>
       );
 
       const Earth = () => (
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-center">🌍 지구와 달 🌙</h2>
-          <p className="text-center text-xs text-blue-300">👆 카드를 클릭해서 영상도 보세요!</p>
+          <h2 className="text-xl font-bold text-center">🌍 탄희랑 지구와 달 이야기 🌙</h2>
+          <p className="text-center text-xs text-blue-300">👆 탄희야, 카드 눌러서 영상도 보자!</p>
           <div className="flex justify-center items-center gap-4 py-2">
             <div className="text-center"><div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full animate-pulse"/><p className="mt-1 font-bold text-xs">지구</p></div>
             <div className="text-gray-400 text-xs">384,400km</div>
@@ -160,39 +160,39 @@
 
       const Myth = () => (
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-center">🏛️ 세계의 달 신화</h2>
-          <p className="text-center text-xs text-pink-300">👆 카드를 클릭해서 영상도 보세요!</p>
+          <h2 className="text-xl font-bold text-center">🏛️ 탄희가 듣는 세계 달 신화</h2>
+          <p className="text-center text-xs text-pink-300">👆 탄희야, 카드 눌러서 이야기를 더 들어보자!</p>
           <div className="space-y-3">{mythCards.map(c=><Card key={c.id} card={c} onClick={()=>setModal({...c,isMyth:true})} isMyth/>)}</div>
         </div>
       );
 
       const Apollo = () => (
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-center">🚀 아폴로 달 탐사</h2>
-          <p className="text-center text-xs text-orange-300">👆 카드를 클릭해서 영상도 보세요!</p>
+          <h2 className="text-xl font-bold text-center">🚀 탄희가 함께 보는 아폴로</h2>
+          <p className="text-center text-xs text-orange-300">👆 탄희야, 카드 눌러서 생생한 영상도 보자!</p>
           <div className="grid grid-cols-2 gap-3">{apolloCards.map(c=><Card key={c.id} card={c} onClick={()=>setModal({...c,isMyth:false})}/>)}</div>
         </div>
       );
 
       const Artemis = () => (
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-center">🌙 아르테미스 2호</h2>
+          <h2 className="text-xl font-bold text-center">🌙 탄희의 아르테미스 2호 탐험</h2>
           <div className="flex gap-3">
             <div className="w-1/3 bg-gray-900/50 rounded-xl p-2">
-              <p className="text-xs text-center mb-2 text-gray-400">클릭!</p>
+              <p className="text-xs text-center mb-2 text-gray-400">탄희야, 로켓을 눌러봐!</p>
               <div className="relative h-40 mx-auto w-10">
                 {rockets.map((p,i)=><button key={p.id} onClick={()=>setRocket(p)} className={`absolute w-full border border-gray-600 hover:scale-110 transition ${rocket?.id===p.id?'ring-2 ring-yellow-400':''}`} style={{top:p.top,height:p.h,backgroundColor:p.color,borderRadius:i===0?'50% 50% 0 0':'2px'}}/>)}
               </div>
             </div>
-            <div className="w-2/3">{rocket?<div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full"><h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3><p className="text-xs">{rocket.desc}</p></div>:<div className="p-3 bg-gray-800/50 rounded-xl h-full text-xs text-gray-400"><p className="font-bold mb-2">👈 로켓 클릭!</p><p>높이: 98m</p><p>무게: 261만kg</p><p>속도: 39,500km/h</p></div>}</div>
+            <div className="w-2/3">{rocket?<div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full"><h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3><p className="text-xs">{rocket.desc}</p></div>:<div className="p-3 bg-gray-800/50 rounded-xl h-full text-xs text-gray-400"><p className="font-bold mb-2">👈 탄희야, 로켓을 눌러봐!</p><p>높이: 98m 정도야!</p><p>무게: 261만kg이나 된단다.</p><p>속도: 39,500km/h까지 달려!</p></div>}</div>
           </div>
           <div className="space-y-2">
-            <h3 className="font-bold text-sm text-center">🗺️ 미션</h3>
+            <h3 className="font-bold text-sm text-center">🗺️ 탄희의 미션 순서</h3>
             <div className="flex gap-1">{missions.map((s,i)=><button key={i} onClick={()=>setMission(i)} className={`flex-1 p-2 rounded-lg text-center ${mission===i?'bg-gradient-to-br from-blue-600 to-purple-600':'bg-gray-800/50'}`}><div className="text-lg">{s.emoji}</div><div className="text-xs">{i+1}</div></button>)}</div>
             <div className="p-3 bg-indigo-900/30 rounded-xl"><h4 className="font-bold text-indigo-300 text-sm">{missions[mission].title}</h4><p className="text-xs mt-1">{missions[mission].desc}</p></div>
           </div>
           <div className="p-3 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl">
-            <h3 className="font-bold text-cyan-300 text-sm mb-1">👨‍🚀 승무원</h3>
+            <h3 className="font-bold text-cyan-300 text-sm mb-1">👨‍🚀 탄희가 응원할 승무원</h3>
             <div className="grid grid-cols-2 gap-1 text-xs"><div>🇺🇸 Reid Wiseman</div><div>🇺🇸 Victor Glover</div><div>🇺🇸 Christina Koch</div><div>🇨🇦 Jeremy Hansen</div></div>
           </div>
         </div>
@@ -204,21 +204,25 @@
         const reset = () => { setQNum(0); setQuizScore(0); setShowAns(false); };
         return (
           <div className="space-y-4">
-            <h2 className="text-xl font-bold text-center">🎮 달 퀴즈!</h2>
-            <div className="text-center"><span className="text-2xl font-bold text-yellow-400">{quizScore}</span><span className="text-gray-400">/{quizzes.length}</span></div>
+            <h2 className="text-xl font-bold text-center">🎮 탄희와 달 퀴즈!</h2>
+            <div className="text-center">
+              <p className="text-xs text-gray-400 mb-1">탄희의 점수</p>
+              <span className="text-2xl font-bold text-yellow-400">{quizScore}</span>
+              <span className="text-gray-400">/{quizzes.length}</span>
+            </div>
             {qNum<quizzes.length?(
               <div className="p-4 bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl">
-                <p className="text-xs text-gray-400 mb-2">문제 {qNum+1}/{quizzes.length}</p>
+                <p className="text-xs text-gray-400 mb-2">탄희야, 문제 {qNum+1}/{quizzes.length}</p>
                 <h3 className="font-bold mb-3">{quizzes[qNum].q}</h3>
                 <div className="space-y-2">{quizzes[qNum].o.map((o,i)=><button key={i} onClick={()=>handleAns(i)} disabled={showAns} className={`w-full p-2 rounded-lg text-left text-sm ${showAns?(i===quizzes[qNum].a?'bg-green-600':'bg-gray-700/50'):'bg-gray-800/50 hover:bg-gray-700'}`}>{i+1}. {o}</button>)}</div>
-                {showAns&&<button onClick={next} className="mt-3 w-full p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-bold text-sm">다음 →</button>}
+                {showAns&&<button onClick={next} className="mt-3 w-full p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-bold text-sm">다음 이야기 →</button>}
               </div>
             ):(
               <div className="p-6 bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl text-center">
                 <div className="text-4xl mb-2">🎉</div>
-                <h3 className="text-xl font-bold mb-2">완료!</h3>
-                <p className="text-lg">{quizScore===quizzes.length?'완벽! 🌟':quizScore>=3?'잘했어요! 👏':'다시 도전! 💪'}</p>
-                <button onClick={reset} className="mt-4 px-6 py-2 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg font-bold">다시!</button>
+                <h3 className="text-xl font-bold mb-2">탄희야, 탐험 완료!</h3>
+                <p className="text-lg">{quizScore===quizzes.length?'완벽해, 탄희야! 🌟':quizScore>=3?'정말 잘했어! 👏':'다시 한번 가볼까? 💪'}</p>
+                <button onClick={reset} className="mt-4 px-6 py-2 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg font-bold">다시 풀어볼까?</button>
               </div>
             )}
           </div>
