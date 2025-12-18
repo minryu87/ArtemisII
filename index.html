@@ -135,6 +135,56 @@
         {title:'귀환 준비',desc:'지구 대기에 재돌입하기 전에 캡슐을 회전시키고 방열판을 체크해. 모두가 무사히 태평양에 착수하길 바라면서 말이야.',tip:'투명 파란 브릭으로 물결을 만들어 캡슐을 띄워 보자.'}
       ];
 
+      const artemisNameStory = {
+        title:'왜 “아르테미스”일까?',
+        desc:'아폴로 프로그램은 태양의 신 이름을 썼지. 그 아폴로에게는 달의 여신인 쌍둥이 자매 아르테미스가 있었어. NASA는 새로운 달 탐사에 여신의 이름을 붙여 “이제는 여동생 차례”라는 메시지를 전하고 있어.'
+      };
+
+      const artemisVehicles = [
+        {id:'sls',name:'SLS 로켓',img:'https://upload.wikimedia.org/wikipedia/commons/1/1f/NASA%E2%80%99s_Evolved_SLS_Block_1B_Crew_Rocket_-_Night_Launch_%28B1B_Crew_Night_Launch%29.jpg',desc:'아르테미스의 출발점! SLS는 NASA가 만든 가장 강력한 로켓으로, 다단 코어와 고체 부스터를 이용해 오리온을 우주로 쏜단다.',link:'https://www.nasa.gov/reference/space-launch-system/'},
+        {id:'orion',name:'오리온 우주선',img:'https://www.nasa.gov/wp-content/uploads/2023/03/ksc-20221117-ph-rls01-0038orig.jpeg',desc:'우주비행사 네 명이 안전하게 탑승할 캡슐이야. 길게는 달까지 갔다가 지구 대기권 재진입도 책임져.',link:'https://www.nasa.gov/humans-in-space/orion-spacecraft/'},
+        {id:'gateway',name:'게이트웨이',img:'https://upload.wikimedia.org/wikipedia/commons/5/5d/Gateway_and_Orion_in_lunar_orbit_%281%29.jpg',desc:'달 주위를 돌며 우주 정류장 역할을 하는 작은 거점이야. 여기서 우주비행사들이 쉬고 연구하고 착륙선을 갈아타.',link:'https://www.nasa.gov/mission/gateway/'},
+        {id:'hls',name:'인간 착륙 시스템',img:'https://upload.wikimedia.org/wikipedia/commons/0/0a/Human_Landing_System_Stand_In.jpg',desc:'게이트웨이에서 달 표면까지 왕복할 착륙선이야. 아르테미스 3에서는 달 남극까지 태워 줄 거야.',link:'https://www.nasa.gov/directorates/esdmd/artemis-campaign-development-division/human-landing-system-program/'}
+      ];
+
+      const artemisSchedule = [
+        {title:'아르테미스 I',detail:'2022년 11월 16일, SLS와 오리온을 무인으로 시험 발사해 지구-달 왕복을 완료했어.'},
+        {title:'아르테미스 II',detail:'첫 유인 시험 비행! 우주비행사 네 명이 달을 한 바퀴 돌아 지구로 복귀할 계획이야.'},
+        {title:'아르테미스 III',detail:'우주비행사를 달 남극에 착륙시켜 물 얼음을 찾고 장기 체류 기술을 시험할 거야.'}
+      ];
+
+      const lunarPlans = [
+        '달 남극에서 물과 얼음을 찾아 활용법을 연구해.',
+        '달 표면에서 지구와 다른 중력, 온도에서 어떻게 일하고 살 수 있는지 경험을 쌓아.',
+        '달을 “화성 가기 전 시험장”으로 삼아 장비와 생활 기술을 검증해.'
+      ];
+
+      const artemisImpact = [
+        '새 기술을 개발하면서 지구에서 쓰이는 제품과 일자리를 만들어.',
+        '국제 파트너와 힘을 합쳐 ISS처럼 협력 모델을 확장해.',
+        '달과 지구, 태양에 대한 새로운 과학 데이터를 모아 인류 지식을 넓혀.'
+      ];
+
+      const careerCorner = [
+        {role:'탐사 지질학자',desc:'어떤 바위가 과학적으로 중요한지 고르고, 우주비행사들이 달에서 샘플을 잘 수집하도록 훈련을 돕지.'},
+        {role:'용접 기술자',desc:'SLS와 오리온 같은 거대한 구조물을 정밀하게 이어 붙이는 전문가야.'},
+        {role:'우주비행사',desc:'리더십과 팀워크를 갖춘 다양한 배경의 사람들이 모여 2년 이상의 훈련 끝에 임무에 참여해.'}
+      ];
+
+      const artemisResources = [
+        {title:'Forward to the Moon 퍼즐북',desc:'미로와 스도쿠로 달 탐사를 복습해 볼까?',url:'https://www.nasa.gov/stem-content/forward-to-the-moon-with-artemis-explorer-activities/'},
+        {title:'SLS Meet the Rocket 포스터',desc:'로켓 구조를 한눈에 볼 수 있는 공식 인포그래픽.',url:'https://www.nasa.gov/humans-in-space/space-launch-system/sls-public-outreach/sls-activities-materials/posters-lithographs-and-bookmarks/'},
+        {title:'오리온 활동지 & 색칠공부',desc:'단어 찾기와 도트 연결로 우주선을 익혀 보자.',url:'https://www.nasa.gov/stem-content/orion-activities-and-coloring-sheets/'},
+        {title:'Create Your Own Artemis Comic',desc:'직접 만화로 아르테미스 이야기를 만들어 볼 수 있어.',url:'https://www.nasa.gov/directorates/somd/space-communications-navigation-program/create-your-own-artemis-comic/'},
+        {title:'What Is the Space Launch System?',desc:'SLS에 대한 공식 설명서를 통해 더 깊이 들어가자.',url:'https://www.nasa.gov/reference/space-launch-system/'},
+        {title:'What Is Orion?',desc:'오리온 우주선이 어떻게 우리를 보호하는지 알아봐.',url:'https://www.nasa.gov/humans-in-space/orion-spacecraft/'}
+      ];
+
+      const artemisVideos = [
+        {title:'We Are Going',desc:'윌리엄 샤트너가 전하는 아르테미스 비전',src:'https://www.youtube.com/embed/vl6jn-DdafM'},
+        {title:'Rocket Science in 60 Seconds – SLS',desc:'1분 만에 배우는 SLS 핵심',src:'https://www.youtube.com/embed/MLgYJh6OFbY'}
+      ];
+
       const quizzes = [
         {q:'탄희야, SLS 로켓은 무엇보다 더 높았을까?',o:['자유의 여신상','에펠탑','남산타워'],a:0},
         {q:'탄희야, 달까지 가는 데 며칠 걸렸을까?',o:['1일','4일','30일'],a:1},
@@ -237,14 +287,9 @@
               </div>
               <div className="w-2/3">
                 {rocket?(
-                  <div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full space-y-2">
-                    <div>
-                      <h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3>
-                      <p className="text-xs text-blue-100 leading-relaxed">{currentInfo?.structure}</p>
-                    </div>
-                    <div className="text-[11px] text-cyan-200 bg-cyan-900/30 rounded-lg p-2 border border-cyan-500/20">
-                      🧱 레고 상상 팁: {currentInfo?.lego}
-                    </div>
+                  <div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full">
+                    <h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3>
+                    <p className="text-xs text-blue-100 leading-relaxed">{currentInfo?.structure}</p>
                   </div>
                 ):(
                   <div className="p-3 bg-gray-800/50 rounded-xl h-full text-xs text-gray-400">
@@ -268,7 +313,6 @@
               </div>
               <p className="text-base font-bold text-white mt-2">{launchInfo.title}</p>
               <p className="text-xs text-gray-200 leading-relaxed mt-1">{launchInfo.desc}</p>
-              <p className="text-[11px] text-amber-200 bg-black/30 rounded-md px-2 py-1 mt-2 border border-amber-500/20">🧱 레고 상상 팁: {launchInfo.lego}</p>
               <div className="flex gap-2 mt-3">
                 <button onClick={()=>setLaunchStage(s=>Math.max(0,s-1))} className="flex-1 px-3 py-2 text-xs rounded-lg bg-gray-800/60 border border-gray-600/40" disabled={launchStage===0}>이전</button>
                 <button onClick={()=>setLaunchStage(s=>s===launchTimeline.length-1?0:s+1)} className="flex-1 px-3 py-2 text-xs rounded-lg bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
@@ -282,12 +326,91 @@
               <div className="bg-black/30 rounded-xl p-3 text-xs">
                 <p className="text-sm font-bold text-white">{flightInfo.title}</p>
                 <p className="text-gray-200 mt-1 leading-relaxed">{flightInfo.desc}</p>
-                <p className="text-[11px] text-cyan-200 mt-2">🧱 레고 상상 팁: {flightInfo.tip}</p>
               </div>
             </div>
             <div className="p-3 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl">
               <h3 className="font-bold text-cyan-300 text-sm mb-1">👨‍🚀 탄희가 응원할 승무원</h3>
               <div className="grid grid-cols-2 gap-1 text-xs"><div>🇺🇸 Reid Wiseman</div><div>🇺🇸 Victor Glover</div><div>🇺🇸 Christina Koch</div><div>🇨🇦 Jeremy Hansen</div></div>
+            </div>
+            <div className="p-3 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-xl border border-purple-500/20 space-y-2">
+              <h3 className="text-lg font-bold text-center">🌕 {artemisNameStory.title}</h3>
+              <p className="text-sm text-gray-100 leading-relaxed">{artemisNameStory.desc}</p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">🚀 아르테미스 우주선 가족</h3>
+              <div className="space-y-3">
+                {artemisVehicles.map(v=>(
+                  <div key={v.id} className="bg-gray-900/60 rounded-2xl border border-gray-700/40 overflow-hidden">
+                    <img src={v.img} alt={v.name} className="w-full h-32 object-cover"/>
+                    <div className="p-3 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-bold text-sm">{v.name}</h4>
+                        <a href={v.link} target="_blank" rel="noreferrer" className="text-xs text-cyan-300 underline">자세히</a>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{v.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">🗓️ 언제 달에 가나요?</h3>
+              <div className="space-y-2">
+                {artemisSchedule.map((item,i)=>(
+                  <div key={i} className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/40">
+                    <p className="text-sm font-bold text-indigo-200">{item.title}</p>
+                    <p className="text-xs text-gray-200 mt-1 leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">🌙 달에서 할 일</h3>
+              <ul className="space-y-2 text-xs text-gray-200 bg-gray-900/40 rounded-xl p-3">
+                {lunarPlans.map((plan,i)=><li key={i} className="flex gap-2"><span>✨</span><span className="flex-1 leading-relaxed">{plan}</span></li>)}
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">🌍 왜 중요한가요?</h3>
+              <ul className="space-y-2 text-xs text-gray-200 bg-gray-900/40 rounded-xl p-3">
+                {artemisImpact.map((info,i)=><li key={i} className="flex gap-2"><span>🌟</span><span className="flex-1 leading-relaxed">{info}</span></li>)}
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">👩‍🔬 커리어 코너</h3>
+              <div className="grid grid-cols-1 gap-2">
+                {careerCorner.map(job=>(
+                  <div key={job.role} className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                    <p className="text-sm font-bold text-cyan-200">{job.role}</p>
+                    <p className="text-xs text-gray-200 mt-1 leading-relaxed">{job.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">📺 공식 영상으로 더 알아보기</h3>
+              <div className="space-y-3">
+                {artemisVideos.map(v=>(
+                  <div key={v.title} className="space-y-2">
+                    <p className="text-sm font-bold text-yellow-200">{v.title}</p>
+                    <p className="text-xs text-gray-300">{v.desc}</p>
+                    <div className="aspect-video rounded-2xl overflow-hidden border border-gray-700/40">
+                      <iframe src={v.src} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={v.title}/>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-center text-lg text-white">📚 더 놀아보고 싶다면</h3>
+              <div className="space-y-2">
+                {artemisResources.map(res=>(
+                  <a key={res.title} href={res.url} target="_blank" rel="noreferrer" className="block p-3 bg-gray-900/50 hover:bg-gray-800/60 rounded-xl border border-gray-700/30 transition">
+                    <p className="text-sm font-bold text-indigo-200">{res.title}</p>
+                    <p className="text-xs text-gray-300 mt-1">{res.desc}</p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         );
