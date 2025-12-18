@@ -69,8 +69,8 @@
       } catch (_) {}
     }
 
-    const MoonExplorer = () => {
-      const [section, setSection] = useState('moon');
+      const MoonExplorer = () => {
+        const [section, setSection] = useState('home');
       const [quizScore, setQuizScore] = useState(0);
       const [qNum, setQNum] = useState(0);
       const [showAns, setShowAns] = useState(false);
@@ -149,37 +149,37 @@
 
       const earthCards = [
         {id:'birth',title:'달의 탄생',emoji:'🌙',color:'from-blue-900/50 to-blue-800/50',short:'탄희야, 45억 년 전 충돌 이야기야!',
-          detail:{desc:'탄희야, 약 45억 년 전에 화성만 한 행성 "테이아"가 아기 지구랑 쾅 부딪혔단다.\n\n그때 튀어나온 돌 조각들이 우주에 둥둥 떠다니다가 서로 붙어서 달이 되었어.\n\n처음엔 달이 지구와 22,500km밖에 안 떨어져 있었는데 지금은 384,400km나 멀어졌지.\n\n지금도 매년 3.8cm씩 살금살금 멀어지고 있다는 게 참 신기하지?',img:'https://photojournal.jpl.nasa.gov/jpeg/PIA12166.jpg',vid:'https://www.youtube.com/embed/UIKmSQqp8W'}},
+          detail:{desc:'탄희야, 약 45억 년 전에 화성만 한 행성 "테이아"가 아기 지구랑 쾅 부딪혔단다.\n\n그때 튀어나온 돌 조각들이 우주에 둥둥 떠다니다가 서로 붙어서 달이 되었어.\n\n처음엔 달이 지구와 22,500km밖에 안 떨어져 있었는데 지금은 384,400km나 멀어졌지.\n\n지금도 매년 3.8cm씩 살금살금 멀어지고 있다는 게 참 신기하지?',img:'https://images-assets.nasa.gov/image/PIA24256/PIA24256~orig.jpg',vid:'https://www.youtube.com/embed/UIKmSQqp8W'}},
         {id:'size',title:'크기 비교',emoji:'📏',color:'from-purple-900/50 to-purple-800/50',short:'달은 지구의 4분의 1 크기야!',
-          detail:{desc:'탄희야, 달의 지름은 3,474km라서 지구(12,742km)의 딱 4분의 1 정도야.\n\n근데 태양은 달보다 400배나 크고 400배 멀리 있어서 하늘에서 비슷하게 보인단다.\n\n그래서 탄희가 좋아하는 멋진 개기일식을 볼 수 있는 거지!',img:'https://photojournal.jpl.nasa.gov/jpeg/PIA00405.jpg',vid:'https://www.youtube.com/embed/cxrLRbkOwKs'}},
+          detail:{desc:'탄희야, 달의 지름은 3,474km라서 지구(12,742km)의 딱 4분의 1 정도야.\n\n근데 태양은 달보다 400배나 크고 400배 멀리 있어서 하늘에서 비슷하게 보인단다.\n\n그래서 탄희가 좋아하는 멋진 개기일식을 볼 수 있는 거지!',img:'https://images-assets.nasa.gov/image/PIA04354/PIA04354~orig.jpg',vid:'https://www.youtube.com/embed/cxrLRbkOwKs'}},
         {id:'tide',title:'밀물과 썰물',emoji:'🌊',color:'from-green-900/50 to-green-800/50',short:'탄희야, 달이 바다를 당겨!',
-          detail:{desc:'탄희야, 달의 중력이 지구 바닷물을 살짝 끌어당겨서 밀물과 썰물이 생기는 거야.\n\n달 쪽 바다는 불룩 올라오고 반대쪽도 원심력 때문에 따라 올라오지.\n\n그래서 하루에 두 번씩 물이 들고 나고, 보름달이나 초승달 때는 차이가 더 커진단다!',img:'https://upload.wikimedia.org/wikipedia/commons/3/3b/Tidal_bulge.png',vid:'https://www.youtube.com/embed/tcGEjzt_4is'}},
+          detail:{desc:'탄희야, 달의 중력이 지구 바닷물을 살짝 끌어당겨서 밀물과 썰물이 생기는 거야.\n\n달 쪽 바다는 불룩 올라오고 반대쪽도 원심력 때문에 따라 올라오지.\n\n그래서 하루에 두 번씩 물이 들고 나고, 보름달이나 초승달 때는 차이가 더 커진단다!',img:'https://images-assets.nasa.gov/image/PIA21312/PIA21312~orig.jpg',vid:'https://www.youtube.com/embed/tcGEjzt_4is'}},
         {id:'quake',title:'문퀘이크',emoji:'🌋',color:'from-orange-900/50 to-orange-800/50',short:'달에도 흔들림이 있단다!',
-          detail:{desc:'탄희야, 달에도 지진처럼 흔들림이 있어서 문퀘이크라고 불러.\n\n아폴로 우주비행사들이 세운 지진계가 무려 28번이나 감지했대.\n\n지구 지진은 금방 끝나지만 달은 물과 공기가 없어서 진동이 한 시간이나 이어질 때도 있어!',img:'https://www.hq.nasa.gov/alsj/a11/AS11-40-5949HR.jpg',vid:'https://www.youtube.com/embed/s3bffub-9UM'}}
+          detail:{desc:'탄희야, 달에도 지진처럼 흔들림이 있어서 문퀘이크라고 불러.\n\n아폴로 우주비행사들이 세운 지진계가 무려 28번이나 감지했대.\n\n지구 지진은 금방 끝나지만 달은 물과 공기가 없어서 진동이 한 시간이나 이어질 때도 있어!',img:'https://www.nasa.gov/sites/default/files/thumbnails/image/536567main_5.jpg',vid:'https://www.youtube.com/embed/s3bffub-9UM'}}
       ];
 
       const historyCards = [
         {id:'ancient',emoji:'📜',title:'고대의 달: 시간은 달이 알려줬어',color:'from-amber-900/50 to-yellow-900/50',short:'탄희야, 달은 옛날 사람들의 시계였대!',
-          detail:{desc:'탄희야, 시계가 없던 옛날 사람들은 달이 차고 기우는 걸 보면서 날짜와 계절을 짐작했어.\n\n“이번 달 보름은 언제지?” 같은 걸 달로 맞췄던 거지.\n\n(긴 설명은 안 할게! 대신 그냥 “달이 시간표”였다는 것만 기억하면 돼.)',img:'https://upload.wikimedia.org/wikipedia/commons/2/2d/Moon_phases_diagram.png'}},
+          detail:{desc:'탄희야, 시계가 없던 옛날 사람들은 달이 차고 기우는 걸 보면서 날짜와 계절을 짐작했어.\n\n“이번 달 보름은 언제지?” 같은 걸 달로 맞췄던 거지.\n\n(긴 설명은 안 할게! 대신 그냥 “달이 시간표”였다는 것만 기억하면 돼.)',img:'https://images-assets.nasa.gov/image/PIA17670/PIA17670~orig.jpg'}},
         {id:'photo',emoji:'📷',title:'1840년: 달 사진이 처음 찍혔어',color:'from-slate-900/50 to-gray-800/50',short:'탄희야, 달을 “찍어서” 남기기 시작!',
-          detail:{desc:'탄희야, 1840년에 처음으로 달 사진이 찍혔어.\n\n그전엔 사람들은 달을 “그려서” 기록했는데, 이제는 사진으로 남길 수 있게 된 거야.',img:'https://upload.wikimedia.org/wikipedia/commons/6/6a/John_W_Draper-The_first_Moon_Photograph_1840.jpg'}},
+          detail:{desc:'탄희야, 1840년에 처음으로 달 사진이 찍혔어.\n\n그전엔 사람들은 달을 “그려서” 기록했는데, 이제는 사진으로 남길 수 있게 된 거야.',img:'https://images-assets.nasa.gov/image/PIA00258/PIA00258~orig.jpg'}},
         {id:'telescope',emoji:'🔭',title:'망원경: 달이 울퉁불퉁하다는 걸 봤어',color:'from-purple-900/50 to-indigo-900/50',short:'탄희야, 달은 매끈한 공이 아니래!',
-          detail:{desc:'탄희야, 망원경으로 달을 보면 그림자와 크레이터가 보여.\n\n사람들은 “달은 완벽한 구슬”이라고 생각했는데, 실제로는 울퉁불퉁한 표면이라는 걸 알게 됐지.',img:'https://upload.wikimedia.org/wikipedia/commons/6/6b/Galileo_moon_phases.jpg'}},
+          detail:{desc:'탄희야, 망원경으로 달을 보면 그림자와 크레이터가 보여.\n\n사람들은 “달은 완벽한 구슬”이라고 생각했는데, 실제로는 울퉁불퉁한 표면이라는 걸 알게 됐지.',img:'https://images-assets.nasa.gov/image/PIA02696/PIA02696~orig.jpg'}},
         {id:'luna9',emoji:'🛰️',title:'1966년: 달에 처음 “부드럽게” 착륙!',color:'from-blue-900/50 to-cyan-900/50',short:'탄희야, 달 표면에서 사진이 날아왔대!',
-          detail:{desc:'탄희야, 1966년에 루나 9가 달에 “충돌”이 아니라 “착륙”을 성공했어.\n\n그리고 달 표면 사진을 보내줬지. 사람들은 “진짜 달 바닥”을 처음 본 거야.',img:'https://upload.wikimedia.org/wikipedia/commons/7/70/Luna_9_first_images_from_surface_of_moon.jpg',vid:'https://www.youtube.com/embed/LxjYvnZ1Z0s'}},
+          detail:{desc:'탄희야, 1966년에 루나 9가 달에 “충돌”이 아니라 “착륙”을 성공했어.\n\n그리고 달 표면 사진을 보내줬지. 사람들은 “진짜 달 바닥”을 처음 본 거야.',img:'https://images-assets.nasa.gov/image/PIA01471/PIA01471~orig.jpg',vid:'https://www.youtube.com/embed/LxjYvnZ1Z0s'}},
         {id:'modern',emoji:'🌙',title:'요즘: 달은 ‘다음 모험의 출발점’',color:'from-emerald-900/50 to-green-900/50',short:'탄희야, 이제 달은 끝이 아니라 시작이야!',
-          detail:{desc:'탄희야, 예전엔 “달에 한 번 가는 것”이 꿈이었는데,\n이제는 달에 자주 가면서 오래 머무는 시대를 준비하고 있어.\n\n그래서 아르테미스가 다시 달로 가는 거야!',img:'https://upload.wikimedia.org/wikipedia/commons/5/55/Artemis_I_Launch_-_SLS_liftoff.jpg'}}
+          detail:{desc:'탄희야, 예전엔 “달에 한 번 가는 것”이 꿈이었는데,\n이제는 달에 자주 가면서 오래 머무는 시대를 준비하고 있어.\n\n그래서 아르테미스가 다시 달로 가는 거야!',img:'https://images-assets.nasa.gov/image/PIA24055/PIA24055~orig.jpg'}}
       ];
 
       const apolloCards = [
         {id:'a11',title:'아폴로 11호',emoji:'🌙',color:'from-orange-900/50 to-red-900/50',short:'탄희야, 인류가 처음 달에 닿은 순간이야!',
-          detail:{desc:'탄희야, 1969년 7월 20일 닐 암스트롱이 달에 첫 발을 디뎠단다.\n\n그때 남긴 말 기억하지? "이것은 한 사람에게는 작은 한 걸음이지만, 인류에게는 위대한 도약입니다."\n\n암스트롱과 올드린이 2시간 31분 동안 걸으며 깃발을 꽂고 달 돌 21.5kg을 챙겼어.\n\n전 세계 6억 명이 그 장면을 숨죽이며 봤대.',img:'https://upload.wikimedia.org/wikipedia/commons/a/a3/Buzz_Aldrin_and_the_US_flag_on_the_Moon%2C_AS11-40-5875.jpg',vid:'https://www.youtube.com/embed/RMINSD7MmT4'}},
+          detail:{desc:'탄희야, 1969년 7월 20일 닐 암스트롱이 달에 첫 발을 디뎠단다.\n\n그때 남긴 말 기억하지? "이것은 한 사람에게는 작은 한 걸음이지만, 인류에게는 위대한 도약입니다."\n\n암스트롱과 올드린이 2시간 31분 동안 걸으며 깃발을 꽂고 달 돌 21.5kg을 챙겼어.\n\n전 세계 6억 명이 그 장면을 숨죽이며 봤대.',img:'https://images-assets.nasa.gov/image/PIA00407/PIA00407~orig.jpg',vid:'https://www.youtube.com/embed/RMINSD7MmT4'}},
         {id:'a13',title:'아폴로 13호',emoji:'🆘',color:'from-red-900/50 to-rose-900/50',short:'위기였지만 모두 살아 돌아왔어!',
-          detail:{desc:'탄희야, 1970년 4월 아폴로 13호에서 "휴스턴, 문제가 생겼습니다"라는 말이 나왔어.\n\n산소 탱크가 폭발해서 전기와 공기가 부족했는데 과학자들과 우주비행사들이 머리를 맞대고 해결했지.\n\n결국 세 명 모두 무사히 지구에 귀환했단다.',img:'https://upload.wikimedia.org/wikipedia/commons/9/9c/Apollo_13_Lunar_Module_Aquarius.jpg',vid:'https://www.youtube.com/embed/WXXuppdewV8'}},
+          detail:{desc:'탄희야, 1970년 4월 아폴로 13호에서 "휴스턴, 문제가 생겼습니다"라는 말이 나왔어.\n\n산소 탱크가 폭발해서 전기와 공기가 부족했는데 과학자들과 우주비행사들이 머리를 맞대고 해결했지.\n\n결국 세 명 모두 무사히 지구에 귀환했단다.',img:'https://images-assets.nasa.gov/image/PIA00271/PIA00271~orig.jpg',vid:'https://www.youtube.com/embed/WXXuppdewV8'}},
         {id:'stats',title:'아폴로 기록',emoji:'📊',color:'from-blue-900/50 to-indigo-900/50',short:'아폴로 기록을 같이 세어보자!',
           detail:{desc:'탄희야, 아폴로 프로그램은 총 17번이나 진행됐고 그중 6번이 달 착륙에 성공했어.\n\n12명의 우주인이 달을 걸었고 382kg의 달 암석을 모았지.\n\n달 표면 활동만 80시간이 넘었고 아폴로 15~17호는 월면차도까지 탔단다.\n\n마지막은 1972년 아폴로 17호였고, 이제 50년 만에 아르테미스가 다시 가는 거야!',img:'https://images-assets.nasa.gov/image/AS17-134-20384/AS17-134-20384~orig.jpg',vid:'https://www.youtube.com/embed/0lZ8iDAmX9o'}},
         {id:'legacy',title:'아폴로의 유산',emoji:'🎁',color:'from-purple-900/50 to-pink-900/50',short:'아폴로 기술이 지금도 곁에 있어!',
-          detail:{desc:'탄희야, 아폴로 덕분에 컴퓨터가 작아져서 지금 우리가 스마트폰을 쓰는 거야.\n\n테프론 프라이팬, 운동화 쿠션, CAT 스캔, 정수 필터 같은 것들도 다 영향을 받았단다.\n\n그때 1달러를 투자하면 7~14달러 가치가 돌아왔다니 정말 대단하지?',img:'https://upload.wikimedia.org/wikipedia/commons/3/3d/Wide_angle_view_of_Mission_Control_Center_during_Apollo_14_transmission_%28S71-17122%29.jpg',vid:'https://www.youtube.com/embed/vl6jn-DdafM'}}
+          detail:{desc:'탄희야, 아폴로 덕분에 컴퓨터가 작아져서 지금 우리가 스마트폰을 쓰는 거야.\n\n테프론 프라이팬, 운동화 쿠션, CAT 스캔, 정수 필터 같은 것들도 다 영향을 받았단다.\n\n그때 1달러를 투자하면 7~14달러 가치가 돌아왔다니 정말 대단하지?',img:'https://images-assets.nasa.gov/image/PIA19889/PIA19889~orig.jpg',vid:'https://www.youtube.com/embed/vl6jn-DdafM'}}
       ];
 
       const rockets = [
@@ -411,7 +411,29 @@
         );
       };
 
-      const Home = () => (
+      const Home = () => {
+        const sectionMap = { earth: 'moon', myth: 'history', apollo: 'apollo', artemis: 'artemis' };
+        return (
+          <div className="text-center space-y-5">
+            <div className="text-5xl animate-bounce">🚀</div>
+            <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">탄희의 달 탐험 대모험!</h1>
+            <p className="text-blue-200">탄희야, 우리가 만들 레고 아르테미스 2호랑 신나게 떠나보자!</p>
+            <p className="text-sm text-gray-300">삼촌이 준비한 로켓 모형을 상상하면서 아래 버튼들을 눌러 보면 더 생생하게 느껴질 거야.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {[{id:'earth',icon:'🌍',name:'탄희의 지구·달 이야기',c:'from-blue-600 to-cyan-600'},{id:'myth',icon:'🏛️',name:'탄희가 듣는 달 신화',c:'from-purple-600 to-pink-600'},{id:'apollo',icon:'🚀',name:'탄희와 아폴로',c:'from-orange-600 to-red-600'},{id:'artemis',icon:'🌙',name:'탄희의 아르테미스',c:'from-indigo-600 to-purple-600'}].map(s=>
+                <button key={s.id} onClick={()=>setSection(sectionMap[s.id])} className={`p-4 bg-gradient-to-br ${s.c} rounded-xl hover:scale-105 transition-transform`}>
+                  <div className="text-3xl mb-2">{s.icon}</div>
+                  <div className="font-bold text-sm">{s.name}</div>
+                </button>
+              )}
+            </div>
+            <div className="p-4 bg-yellow-500/20 rounded-xl border border-yellow-500/50">
+              <p className="text-yellow-300 font-bold">⏰ 탄희랑 약속한 발사</p>
+              <p className="text-xl font-bold text-white mt-1">2026년 4월을 기다리자!</p>
+            </div>
+          </div>
+        );
+      };
         <div className="text-center space-y-5">
           <div className="text-5xl animate-bounce">🚀</div>
           <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">탄희의 달 탐험 대모험!</h1>
@@ -430,278 +452,177 @@
             <p className="text-xl font-bold text-white mt-1">2026년 4월을 기다리자!</p>
           </div>
         </div>
-      );
 
       const MoonBasics = () => {
-        const [zoom, setZoom] = useState(1.1);
-        const [pos, setPos] = useState({x: 78, y: 62}); // %
+        const moonImg = 'https://pngimg.com/uploads/moon/moon_PNG51.png';
+        const [zoom, setZoom] = useState(0.5);
+        const [pos, setPos] = useState({x: 0, y: 0});
         const [dragging, setDragging] = useState(false);
-        const moonImg = 'https://photojournal.jpl.nasa.gov/jpeg/PIA12235.jpg';
-        // 스크래치(긁기) 캔버스
-        const scratchRef = useRef(null);
-        const scratchWrapRef = useRef(null);
-        const [scratchReady, setScratchReady] = useState(false);
-        const [scratching, setScratching] = useState(false);
-        const [scratchHint, setScratchHint] = useState(false);
-        const crater = useRef({x: 0.62, y: 0.48, r: 0.14}); // 0~1
-
-        const resetScratch = () => {
-          const canvas = scratchRef.current;
-          const wrap = scratchWrapRef.current;
-          if (!canvas || !wrap) return;
-          const dpr = window.devicePixelRatio || 1;
-          const w = Math.floor(wrap.clientWidth);
-          const h = Math.floor(wrap.clientHeight);
-          canvas.width = Math.floor(w * dpr);
-          canvas.height = Math.floor(h * dpr);
-          canvas.style.width = `${w}px`;
-          canvas.style.height = `${h}px`;
-          const ctx = canvas.getContext('2d');
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          ctx.globalCompositeOperation = 'source-over';
-          ctx.fillStyle = 'rgba(10,10,15,0.92)';
-          ctx.fillRect(0, 0, w, h);
-          ctx.fillStyle = 'rgba(255,255,255,0.08)';
-          for (let i = 0; i < 14; i++) {
-            ctx.beginPath();
-            ctx.arc(Math.random()*w, Math.random()*h, 10 + Math.random()*22, 0, Math.PI*2);
-            ctx.fill();
-          }
-          setScratchReady(true);
-        };
-
-        const scratchAt = (clientX, clientY) => {
-          const canvas = scratchRef.current;
-          const wrap = scratchWrapRef.current;
-          if (!canvas || !wrap) return;
-          const r = wrap.getBoundingClientRect();
-          const x = clientX - r.left;
-          const y = clientY - r.top;
-          const ctx = canvas.getContext('2d');
-          ctx.globalCompositeOperation = 'destination-out';
-          ctx.beginPath();
-          ctx.arc(x, y, 18, 0, Math.PI*2);
-          ctx.fill();
-        };
-
-        const checkCrater = () => {
-          const canvas = scratchRef.current;
-          const wrap = scratchWrapRef.current;
-          if (!canvas || !wrap) return;
-          const w = wrap.clientWidth;
-          const h = wrap.clientHeight;
-          const ctx = canvas.getContext('2d');
-          const cx = crater.current.x * w;
-          const cy = crater.current.y * h;
-          const rr = crater.current.r * Math.min(w, h);
-          // 크레이터 영역 샘플링: 알파가 많이 지워졌으면 성공
-          const img = ctx.getImageData(Math.max(0, Math.floor(cx - rr)), Math.max(0, Math.floor(cy - rr)), Math.floor(rr*2), Math.floor(rr*2));
-          let clear = 0;
-          const step = 16; // 성능 위해 듬성듬성
-          for (let i = 3; i < img.data.length; i += 4*step) {
-            if (img.data[i] < 40) clear++;
-          }
-          const ratio = clear / (img.data.length / (4*step));
-          if (ratio > 0.55) {
-            award('moon-scratch', '🪨', '크레이터 발견');
-            showToast('🪨 크레이터 발견!');
-          }
-        };
-
-        useEffect(() => {
-          resetScratch();
-          const onResize = () => resetScratch();
-          window.addEventListener('resize', onResize);
-          return () => window.removeEventListener('resize', onResize);
-        }, []);
-
-        useEffect(() => {
-          // “가까이 갖다 대기” 스티커
-          const dx = pos.x - 22;
-          const dy = pos.y - 55;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 10) award('moon-close', '🌙', '달 가까이!');
-        }, [pos.x, pos.y]);
-
-        // 중력 슬라이더 + 점프(탭) 추가
-        const [g, setG] = useState(1.62); // moon gravity approx
+        const [activeTab, setActiveTab] = useState(null); // null | 'zoom' | 'gravity'
+        const [g, setG] = useState(1.62);
+        const [jumpPower, setJumpPower] = useState(60);
         const [jumping, setJumping] = useState(false);
-        const [jumpPower, setJumpPower] = useState(50);
+        const [lastHeight, setLastHeight] = useState(60);
 
         const doJump = () => {
           if (jumping) return;
           setJumping(true);
           sfx('click');
           showToast('🦘 점프!');
-          // 중력이 낮을수록 더 높이
           const height = clamp((jumpPower / g) * 6, 20, 160);
           if (g < 2 && jumpPower > 70) award('moon-superjump', '🦘', '슈퍼 점프');
           setTimeout(() => setJumping(false), 620);
           return height;
         };
 
-        const [lastHeight, setLastHeight] = useState(60);
-
         return (
           <div className="h-[calc(100vh-104px)] flex flex-col gap-3">
             <div className="text-center space-y-1">
               <h2 className="text-xl font-bold">🌙 달 기초</h2>
-              <p className="text-xs text-gray-300">탄희야, 달을 드래그해서 지구 쪽에 붙여봐. 그리고 줌도 올려봐!</p>
+              <p className="text-xs text-gray-300">탄희야, 이야기 카드를 보고 즐거운 인터랙션을 골라보자!</p>
             </div>
 
-            <div className="bg-gray-900/40 border border-gray-700/40 rounded-2xl p-3 space-y-2">
-              <div className="flex items-center justify-between">
-                <p className="text-xs text-gray-300">🔍 달 줌</p>
-                <button
-                  className="text-xs px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700/50"
-                  onClick={() => { setZoom(z => clamp(z + 0.25, 1, 2.5)); sfx('click'); if (zoom >= 2.0) award('moon-zoom', '🔍', '줌 마스터'); }}
-                >
-                  + 확대
+            {!activeTab && (
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {earthCards.map(card => (
+                    <Card key={card.id} card={card} onClick={()=>{ award(`moon-card-${card.id}`,'✨','달 카드'); setModal(card); }} />
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => setActiveTab('zoom')}
+                    className="p-4 bg-gradient-to-br from-blue-600/60 to-sky-500/60 rounded-2xl border border-blue-500/40 space-y-2 text-center hover:scale-[1.01] transition"
+                  >
+                    <div className="text-3xl">🔍</div>
+                    <p className="font-bold">달 줌</p>
+                    <p className="text-xs text-gray-200">확대하고 드래그해봐</p>
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('gravity')}
+                    className="p-4 bg-gradient-to-br from-emerald-600/50 to-emerald-500/30 rounded-2xl border border-green-400/40 space-y-2 text-center hover:scale-[1.01] transition"
+                  >
+                    <div className="text-3xl">🦘</div>
+                    <p className="font-bold">중력 놀이</p>
+                    <p className="text-xs text-gray-200">달에서 점프해봐</p>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {activeTab && (
+              <div className="flex items-center justify-between mb-2">
+                <button onClick={() => setActiveTab(null)} className="px-4 py-2 bg-gray-600/50 hover:bg-gray-500/70 rounded-lg text-sm font-bold">
+                  ← 카드로 돌아가기
                 </button>
-              </div>
-              <input
-                type="range"
-                min="1"
-                max="2.5"
-                step="0.05"
-                value={zoom}
-                onChange={(e)=>{ setZoom(parseFloat(e.target.value)); if (parseFloat(e.target.value) >= 2.2) award('moon-zoom', '🔍', '줌 마스터'); }}
-                className="w-full"
-              />
-              <div className="relative h-36 rounded-xl overflow-hidden border border-gray-700/40 bg-black">
-                <img
-                  src={moonImg}
-                  alt="Moon"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ transform: `scale(${zoom})`, transformOrigin: 'center' }}
-                  onDoubleClick={() => { setZoom(1.1); sfx('click'); showToast('↩️ 리셋'); }}
-                />
-                <div className="absolute bottom-2 left-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">
-                  더블클릭 = 줌 리셋
+                <div className="text-sm font-bold text-white">
+                  {activeTab === 'zoom' ? '🔍 달 줌' : '🦘 중력 놀이'}
                 </div>
               </div>
-            </div>
+            )}
 
-            <div className="bg-gray-900/40 border border-gray-700/40 rounded-2xl p-3 space-y-2">
-              <div className="flex items-center justify-between">
-                <p className="text-xs text-gray-300">🪨 스크래치: 숨은 크레이터 찾기</p>
-                <div className="flex gap-2">
+            {activeTab === 'zoom' && (
+              <div className="flex-1 bg-gray-900/40 border border-gray-700/40 rounded-2xl p-3 space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-gray-300 font-bold">🔍 달 줌</p>
                   <button
-                    onClick={()=>{ setScratchHint(true); sfx('click'); showToast('👀 힌트!'); award('moon-hint','👀','힌트'); setTimeout(()=>setScratchHint(false), 650); }}
-                    className="text-xs px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700/50"
+                    className="text-sm px-4 py-2 rounded-full bg-gray-800/70 border border-gray-700/50"
+                    onClick={() => { setZoom(z => clamp(z + 0.25, 0.5, 2.5)); sfx('click'); }}
                   >
-                    힌트
-                  </button>
-                  <button
-                    onClick={()=>{ resetScratch(); sfx('click'); showToast('🔄 다시'); }}
-                    className="text-xs px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700/50"
-                  >
-                    리셋
+                    + 확대
                   </button>
                 </div>
-              </div>
-              <p className="text-[11px] text-gray-400">탄희야, 위를 손가락(마우스)로 “긁어서” 크레이터를 찾아봐!</p>
-              <div ref={scratchWrapRef} className="relative h-32 rounded-xl overflow-hidden border border-gray-700/40 bg-black select-none">
-                <img src={moonImg} alt="Moon surface" className="absolute inset-0 w-full h-full object-cover opacity-90"/>
-                {scratchHint && (
-                  <div
-                    className="absolute rounded-full border-2 border-yellow-300/80"
-                    style={{
-                      left: `${crater.current.x*100}%`,
-                      top: `${crater.current.y*100}%`,
-                      width: `${crater.current.r*200}%`,
-                      height: `${crater.current.r*200}%`,
-                      transform: 'translate(-50%,-50%)'
-                    }}
+                <input
+                  type="range"
+                  min="0.5"
+                  max="2.5"
+                  step="0.05"
+                  value={zoom}
+                  onChange={(e)=>{ setZoom(parseFloat(e.target.value)); if (parseFloat(e.target.value) >= 2.2) award('moon-zoom', '🔍', '줌 마스터'); }}
+                  className="w-full"
+                />
+                <div className="relative h-52 rounded-xl overflow-hidden border border-gray-700/40 bg-gradient-to-br from-black to-blue-900/30">
+                  <img
+                    src="https://pngimg.com/uploads/earth/earth_PNG21.png"
+                    alt="Earth"
+                    className="absolute left-4 top-4 w-10 h-10 rounded-full animate-spin shadow-lg"
+                    style={{animationDuration: '15s'}}
                   />
-                )}
-                <canvas
-                  ref={scratchRef}
-                  className="absolute inset-0"
-                  onPointerDown={(e)=>{ if (!scratchReady) return; e.currentTarget.setPointerCapture(e.pointerId); setScratching(true); scratchAt(e.clientX,e.clientY); sfx('click'); }}
-                  onPointerMove={(e)=>{ if (!scratching) return; scratchAt(e.clientX,e.clientY); }}
-                  onPointerUp={()=>{ setScratching(false); checkCrater(); }}
-                  onPointerCancel={()=>setScratching(false)}
-                />
-                <div className="absolute bottom-2 right-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">
-                  드래그=긁기
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900/40 border border-gray-700/40 rounded-2xl p-3 space-y-2">
-              <div className="flex items-center justify-between">
-                <p className="text-xs text-gray-300">🧲 중력 놀이</p>
-                <button
-                  className="text-xs px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700/50"
-                  onClick={()=>{ setG(1.62); setJumpPower(50); sfx('click'); showToast('↩️ 기본'); }}
-                >
-                  달(기본)
-                </button>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <button onClick={()=>{ setG(9.81); sfx('click'); showToast('🌍 지구'); award('moon-gravity', '🧲', '중력'); }} className="py-2 rounded-xl bg-gray-800/60 border border-gray-600/40 text-xs font-bold">🌍 지구</button>
-                <button onClick={()=>{ setG(1.62); sfx('click'); showToast('🌙 달'); award('moon-gravity', '🧲', '중력'); }} className="py-2 rounded-xl bg-gray-800/60 border border-gray-600/40 text-xs font-bold">🌙 달</button>
-              </div>
-              <p className="text-[11px] text-gray-400">슬라이더로 중력을 바꾸고 점프해봐!</p>
-              <input type="range" min="0.8" max="12" step="0.05" value={g} onChange={(e)=>setG(parseFloat(e.target.value))} className="w-full"/>
-              <div className="flex items-center justify-between text-[11px] text-gray-400">
-                <span>약함</span><span>g={g.toFixed(2)}</span><span>강함</span>
-              </div>
-              <input type="range" min="10" max="100" step="1" value={jumpPower} onChange={(e)=>setJumpPower(parseInt(e.target.value,10))} className="w-full"/>
-              <div className="flex items-center justify-between text-[11px] text-gray-400">
-                <span>점프 힘</span><span>{jumpPower}</span><span>강하게!</span>
-              </div>
-              <div className="relative h-24 rounded-xl overflow-hidden border border-gray-700/40 bg-gradient-to-b from-black to-gray-900">
-                <div className="absolute bottom-2 left-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">스티커: 🦘</div>
-                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-gray-700/30 to-gray-800/50"/>
-                <div className="absolute bottom-3 left-1/2" style={{transform:'translateX(-50%)'}}>
-                  <div
-                    className={`text-2xl transition-transform duration-500 ${jumping?'wiggle':''}`}
-                    style={{ transform: `translateY(-${jumping ? lastHeight : 0}px)` }}
-                  >
-                    👨‍🚀
+                  <p className="absolute left-16 top-6 text-[11px] font-bold text-white">지구</p>
+                  <img
+                    src={moonImg}
+                    alt="Moon"
+                    className="absolute inset-0 w-full h-full object-contain cursor-grab"
+                    style={{ transform: `scale(${zoom}) translate(${pos.x}px, ${pos.y}px)`, transformOrigin: 'center' }}
+                    onDoubleClick={() => { setZoom(0.5); setPos({x: 0, y: 0}); sfx('click'); showToast('↩️ 리셋'); }}
+                    onPointerDown={(e) => {
+                      setDragging(true);
+                      e.currentTarget.setPointerCapture(e.pointerId);
+                    }}
+                    onPointerMove={(e) => {
+                      if (!dragging) return;
+                      const deltaX = e.movementX;
+                      const deltaY = e.movementY;
+                      setPos(prev => ({
+                        x: clamp(prev.x + deltaX, -70, 70),
+                        y: clamp(prev.y + deltaY, -70, 70)
+                      }));
+                    }}
+                    onPointerUp={() => setDragging(false)}
+                    onPointerLeave={()=>setDragging(false)}
+                  />
+                  <div className="absolute bottom-2 left-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">
+                    더블클릭 = 리셋 · 드래그 = 이동
                   </div>
                 </div>
               </div>
-              <button
-                onClick={() => { const h = doJump(); if (typeof h === 'number') setLastHeight(h); }}
-                className="w-full py-3 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-600 font-black"
-              >
-                🦘 점프!
-              </button>
-            </div>
+            )}
 
-            <div className="relative flex-1 bg-gradient-to-br from-black/40 to-indigo-950/30 border border-gray-700/40 rounded-2xl overflow-hidden">
-              <div className="absolute left-[10%] top-[45%] text-center select-none">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-green-500 rounded-full animate-pulse" />
-                <p className="mt-1 text-xs font-bold">지구</p>
+            {activeTab === 'gravity' && (
+              <div className="flex-1 bg-gray-900/40 border border-gray-700/40 rounded-2xl p-3 space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-gray-300 font-bold">🦘 중력 놀이</p>
+                  <button
+                    className="text-sm px-4 py-2 rounded-full bg-gray-800/70 border border-gray-700/50"
+                    onClick={()=>{ setG(1.62); setJumpPower(60); sfx('click'); showToast('↩️ 기본'); }}
+                  >
+                    달 기본
+                  </button>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <button onClick={()=>{ setG(9.81); sfx('click'); showToast('🌍 지구'); award('moon-gravity', '🧲', '중력'); }} className="py-3 rounded-xl bg-gray-800/60 border border-gray-600/40 text-sm font-bold">🌍 지구</button>
+                  <button onClick={()=>{ setG(1.62); sfx('click'); showToast('🌙 달'); award('moon-gravity', '🧲', '중력'); }} className="py-3 rounded-xl bg-gray-800/60 border border-gray-600/40 text-sm font-bold">🌙 달</button>
+                </div>
+                <p className="text-sm text-gray-400">슬라이더로 중력을 바꾸고 점프해봐!</p>
+                <input type="range" min="0.8" max="12" step="0.05" value={g} onChange={(e)=>setG(parseFloat(e.target.value))} className="w-full"/>
+                <div className="flex items-center justify-between text-[11px] text-gray-400">
+                  <span>약함</span><span>g={g.toFixed(2)}</span><span>강함</span>
+                </div>
+                <input type="range" min="10" max="100" step="1" value={jumpPower} onChange={(e)=>setJumpPower(parseInt(e.target.value,10))} className="w-full"/>
+                <div className="flex items-center justify-between text-[11px] text-gray-400">
+                  <span>점프 힘</span><span>{jumpPower}</span><span>강하게!</span>
+                </div>
+                <div className="relative h-48 rounded-xl overflow-hidden border border-gray-700/40 bg-gradient-to-b from-black to-gray-900">
+                  <div className="absolute bottom-2 left-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">스티커: 🦘</div>
+                  <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-gray-700/30 to-gray-800/50"/>
+                  <div className="absolute bottom-3 left-1/2" style={{transform:'translateX(-50%)'}}>
+                    <div
+                      className={`text-3xl transition-transform duration-500 ${jumping?'wiggle':''}`}
+                      style={{ transform: `translateY(-${jumping ? lastHeight : 0}px)` }}
+                    >
+                      👨‍🚀
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => { const h = doJump(); if (typeof h === 'number') setLastHeight(h); }}
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-600 font-black text-lg"
+                >
+                  🦘 점프!
+                </button>
               </div>
+            )}
 
-              <div
-                className={`absolute w-10 h-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-500 border border-gray-300/50 ${dragging?'wiggle':''}`}
-                style={{ left: `${pos.x}%`, top: `${pos.y}%`, transform: 'translate(-50%,-50%)' }}
-                onPointerDown={(e)=>{ e.currentTarget.setPointerCapture(e.pointerId); setDragging(true); sfx('click'); }}
-                onPointerUp={()=>setDragging(false)}
-                onPointerMove={(e)=>{
-                  if (!dragging) return;
-                  const r = e.currentTarget.parentElement.getBoundingClientRect();
-                  const x = ((e.clientX - r.left) / r.width) * 100;
-                  const y = ((e.clientY - r.top) / r.height) * 100;
-                  setPos({ x: clamp(x, 8, 92), y: clamp(y, 10, 90) });
-                }}
-              />
-              <div className="absolute right-2 top-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">
-                드래그=움직이기
-              </div>
-              <div className="absolute bottom-2 right-2 text-[11px] bg-black/60 px-2 py-1 rounded-full border border-gray-600/40">
-                스티커: 🔍줌 / 🌙가까이
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {earthCards.map(c=><Card key={c.id} card={c} onClick={()=>{ award(`moon-card-${c.id}`,'✨','달 카드'); setModal(c); }}/>)}
-            </div>
           </div>
         );
       };
@@ -1359,6 +1280,7 @@
       // (구성 유지) 별도 갤러리/스티커 섹션은 제거했어.
 
       const nav = [
+        {id:'home',n:'🏠'},
         {id:'moon',n:'🌙'},
         {id:'history',n:'📜'},
         {id:'apollo',n:'🚀'},
@@ -1378,7 +1300,8 @@
                   {soundOn?'🔊':'🔇'}
                 </button>
                 <button onClick={()=>{
-                  const pool = section === 'moon' ? earthCards
+                  const pool = section === 'home' ? earthCards
+                    : section === 'moon' ? earthCards
                     : section === 'history' ? historyCards
                     : section === 'apollo' ? apolloCards
                     : nasaLearnCards;
@@ -1392,6 +1315,7 @@
             </div>
           </nav>
           <div className="relative z-10 max-w-md mx-auto p-4 pt-20">
+            {section==='home'&&<Home/>}
             {section==='moon'&&<MoonBasics/>}
             {section==='history'&&<MoonHistory/>}
             {section==='apollo'&&<Apollo/>}
