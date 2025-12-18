@@ -33,6 +33,8 @@
       const [showAns, setShowAns] = useState(false);
       const [rocket, setRocket] = useState(null);
       const [mission, setMission] = useState(0);
+      const [launchStage, setLaunchStage] = useState(0);
+      const [flightStage, setFlightStage] = useState(0);
       const [stars, setStars] = useState([]);
       const [modal, setModal] = useState(null);
 
@@ -82,6 +84,33 @@
         {id:'eng',name:'RS-25',color:'#374151',top:'75%',h:'8%',desc:'RS-25 엔진 4개가 모여서 셔틀 때부터 쌓은 경험을 그대로 보여줘.'}
       ];
 
+      const rocketInfos = {
+        las:{
+          structure:'로켓 맨 꼭대기에 붙어 있는 뾰족한 부분이야. 만약 문제가 생기면 잠깐 사이에도 우주인을 통째로 분리해서 낙하산으로 내려보낼 수 있어.',
+          lego:'레고 만들 땐 제일 마지막에 작은 원뿔을 얹으면서 “안전 모자”라고 생각하면 기억하기 더 쉽단다.'
+        },
+        orion:{
+          structure:'오리온은 우주인들이 생활하고 잠도 자는 진짜 집이야. 조종석, 컴퓨터, 재진입용 방열판까지 콤팩트하게 들어가 있어.',
+          lego:'캡슐 창문을 스티커나 투명 브릭으로 꾸미면 진짜 우주선 느낌이 나니까 꼭 넣어보자!'
+        },
+        icps:{
+          structure:'Interim Cryogenic Propulsion Stage라는 긴 이름을 가진 2단 추진체야. 액체 수소와 산소를 써서 달로 향하는 마지막 큰 추진을 해 줘.',
+          lego:'주황색과 흰색을 번갈아 쌓아서 연료 탱크와 엔진 부분을 구분해 주면 훨씬 멋져.'
+        },
+        core:{
+          structure:'주황색의 두꺼운 몸통이 바로 코어 스테이지야. 여기에 연료를 채우고 RS-25 엔진 4개를 달아 둔단다.',
+          lego:'둥근 실린더 모양을 만들기 어렵다면 1×2 브릭을 돌아가면서 붙여서 원통 느낌을 내 보자.'
+        },
+        boost:{
+          structure:'양옆에 붙은 흰색 부스터 두 개가 전체 추력의 대부분을 만들어. 2분 정도 타고 나면 바다로 떨어져서 회수하지.',
+          lego:'부스터에는 검은 줄 문양이 많은데, 검은 타일이나 스티커로 포인트를 주면 진짜 같아져!'
+        },
+        eng:{
+          structure:'RS-25 엔진은 원래 우주왕복선에서 쓰던 친구들이야. 재사용 경험 덕분에 이번에도 매우 믿음직하지.',
+          lego:'투명 오렌지 브릭을 달아서 화염이 나오는 것처럼 꾸미면 사진 찍을 때도 멋지단다.'
+        }
+      };
+
       const missions = [
         {title:'발사!',desc:'케네디 우주센터에서 카운트다운을 외치며 하늘로 쏘아 올리자!',emoji:'🔥'},
         {title:'지구 궤도',desc:'궤도를 돌면서 모든 시스템을 꼼꼼히 확인해, 탄희야!',emoji:'🌍'},
@@ -90,12 +119,29 @@
         {title:'귀환',desc:'태평양에 착수하면서 "탄희야, 집에 간다!"라고 외칠 거야.',emoji:'🪂'}
       ];
 
+      const launchTimeline = [
+        {title:'T-10분, 카운트다운',icon:'⏱️',desc:'모든 밸브와 컴퓨터를 마지막으로 점검하고 연료 온도를 맞춰. 관제실에서는 "Go!" 사인이 쏟아지지.',lego:'레고 놀이할 땐 이 순간을 위해 미니피겨들을 콘솔 자리에 앉혀 두면 더 실감나!'},
+        {title:'점화! 부스터 점등',icon:'🔥',desc:'RS-25 엔진과 고체 부스터가 동시에 불을 뿜으면서 로켓이 서서히 들썩이지.',lego:'불꽃 브릭을 길게 붙여서 “화르르” 타는 느낌을 만들어 보자.'},
+        {title:'최대 동압 통과',icon:'💨',desc:'대기 저항이 가장 큰 구간을 지나며 조종사가 장비를 지켜봐. 여기만 지나면 훨씬 안정돼.',lego:'로켓 주위를 투명 브릭으로 둘러서 공기가 흐르는 것처럼 연출해도 좋아.'},
+        {title:'부스터 분리',icon:'✂️',desc:'연료를 다 쓴 옆 부스터를 떼어내고 코어 스테이지만 계속 올라가.',lego:'자석이나 핀을 써서 “딸깍” 분리되는 구조로 만들면 탄희가 직접 재현할 수 있어!'},
+        {title:'2단 점화',icon:'🌠',desc:'ICPS가 불을 붙여 달 궤도로 향하는 거대한 추진을 만들어. 이게 바로 TLI(달 전이 궤도)야.',lego:'주황색 몸통 뒤에 작은 엔진 브릭을 붙여 다른 불꽃 색을 써 봐.'},
+        {title:'오리온 분리 & 항해',icon:'🛰️',desc:'오리온이 로켓에서 떨어져 나와 태양 전지판을 펼치고 4일간의 여행을 시작해.',lego:'날개를 접었다 펼 수 있게 힌지를 쓰면 진짜처럼 보인단다.'}
+      ];
+
+      const flightStories = [
+        {title:'지구를 작별하며',desc:'탄희야, 창문 밖으로 지구가 작아지는 걸 보면 마음이 두근두근해. 파란 구름들이 공처럼 보인단다.',tip:'레고 오리온 옆에 작은 파란 구슬을 두면 지구 모형 역할을 할 수 있어.'},
+        {title:'달로 향하는 길',desc:'우주선은 하루에 한 번씩 엔진을 살짝 켜서 코스를 조정해. 그때마다 승무원들은 서로 “탄희도 듣고 있지?”라고 농담을 나눠.',tip:'긴 투명 지지대를 활용해 우주선이 공중에 떠 있는 것처럼 전시해 보자.'},
+        {title:'달 뒤 커브 돌기',desc:'달 뒤를 돌아 나가면 통신이 잠깐 끊기는데, 우주인들은 창밖으로 크레이터를 자세히 관찰해.',tip:'회색 타일이나 둥근 브릭으로 달 표면 디오라마를 만들어보면 어때?'},
+        {title:'귀환 준비',desc:'지구 대기에 재돌입하기 전에 캡슐을 회전시키고 방열판을 체크해. 모두가 무사히 태평양에 착수하길 바라면서 말이야.',tip:'투명 파란 브릭으로 물결을 만들어 캡슐을 띄워 보자.'}
+      ];
+
       const quizzes = [
         {q:'탄희야, SLS 로켓은 무엇보다 더 높았을까?',o:['자유의 여신상','에펠탑','남산타워'],a:0},
         {q:'탄희야, 달까지 가는 데 며칠 걸렸을까?',o:['1일','4일','30일'],a:1},
         {q:'오리온 캡슐에는 우주인이 몇 명 탈까?',o:['2명','4명','10명'],a:1},
         {q:'탄희야, 달에 첫 발을 내디딘 사람은 누구였을까?',o:['버즈 올드린','닐 암스트롱','마이클 콜린스'],a:1},
-        {q:'그리스에서 달의 여신으로 불린 존재는 누구일까?',o:['아테나','셀레네','헤라'],a:1}
+        {q:'그리스에서 달의 여신으로 불린 존재는 누구일까?',o:['아테나','셀레네','헤라'],a:1},
+        {q:'탄희야, 로켓 맨 위의 비상용 장치는 무엇일까?',o:['탈출 시스템','부스터','월면차'],a:0}
       ];
 
       const Modal = ({card,onClose,isMyth}) => (
@@ -129,7 +175,8 @@
         <div className="text-center space-y-5">
           <div className="text-5xl animate-bounce">🚀</div>
           <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">탄희의 달 탐험 대모험!</h1>
-          <p className="text-blue-200">탄희야, 우리 아르테미스 2호랑 신나게 떠나보자!</p>
+          <p className="text-blue-200">탄희야, 우리가 만들 레고 아르테미스 2호랑 신나게 떠나보자!</p>
+          <p className="text-sm text-gray-300">삼촌이 준비한 로켓 모형을 상상하면서 아래 버튼들을 눌러 보면 더 생생하게 느껴질 거야.</p>
           <div className="grid grid-cols-2 gap-3">
             {[{id:'earth',icon:'🌍',name:'탄희의 지구·달 이야기',c:'from-blue-600 to-cyan-600'},{id:'myth',icon:'🏛️',name:'탄희가 듣는 달 신화',c:'from-purple-600 to-pink-600'},{id:'apollo',icon:'🚀',name:'탄희와 아폴로',c:'from-orange-600 to-red-600'},{id:'artemis',icon:'🌙',name:'탄희의 아르테미스',c:'from-indigo-600 to-purple-600'}].map(s=>
               <button key={s.id} onClick={()=>setSection(s.id)} className={`p-4 bg-gradient-to-br ${s.c} rounded-xl hover:scale-105 transition-transform`}>
@@ -174,29 +221,77 @@
         </div>
       );
 
-      const Artemis = () => (
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold text-center">🌙 탄희의 아르테미스 2호 탐험</h2>
-          <div className="flex gap-3">
-            <div className="w-1/3 bg-gray-900/50 rounded-xl p-2">
-              <p className="text-xs text-center mb-2 text-gray-400">탄희야, 로켓을 눌러봐!</p>
-              <div className="relative h-40 mx-auto w-10">
-                {rockets.map((p,i)=><button key={p.id} onClick={()=>setRocket(p)} className={`absolute w-full border border-gray-600 hover:scale-110 transition ${rocket?.id===p.id?'ring-2 ring-yellow-400':''}`} style={{top:p.top,height:p.h,backgroundColor:p.color,borderRadius:i===0?'50% 50% 0 0':'2px'}}/>)}
+      const Artemis = () => {
+        const currentInfo = rocket ? rocketInfos[rocket.id] : null;
+        const launchInfo = launchTimeline[launchStage];
+        const flightInfo = flightStories[flightStage];
+        return (
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold text-center">🌙 탄희의 아르테미스 2호 탐험</h2>
+            <div className="flex gap-3">
+              <div className="w-1/3 bg-gray-900/50 rounded-xl p-2">
+                <p className="text-xs text-center mb-2 text-gray-400">탄희야, 로켓을 눌러봐!</p>
+                <div className="relative h-40 mx-auto w-10">
+                  {rockets.map((p,i)=><button key={p.id} onClick={()=>setRocket(p)} className={`absolute w-full border border-gray-600 hover:scale-110 transition ${rocket?.id===p.id?'ring-2 ring-yellow-400':''}`} style={{top:p.top,height:p.h,backgroundColor:p.color,borderRadius:i===0?'50% 50% 0 0':'2px'}}/>)}
+                </div>
+              </div>
+              <div className="w-2/3">
+                {rocket?(
+                  <div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full space-y-2">
+                    <div>
+                      <h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3>
+                      <p className="text-xs text-blue-100 leading-relaxed">{currentInfo?.structure}</p>
+                    </div>
+                    <div className="text-[11px] text-cyan-200 bg-cyan-900/30 rounded-lg p-2 border border-cyan-500/20">
+                      🧱 레고 상상 팁: {currentInfo?.lego}
+                    </div>
+                  </div>
+                ):(
+                  <div className="p-3 bg-gray-800/50 rounded-xl h-full text-xs text-gray-400">
+                    <p className="font-bold mb-2">👈 탄희야, 로켓을 눌러봐!</p>
+                    <p>높이: 98m 정도야!</p>
+                    <p>무게: 261만kg이나 된단다.</p>
+                    <p>속도: 39,500km/h까지 달려!</p>
+                  </div>
+                )}
               </div>
             </div>
-            <div className="w-2/3">{rocket?<div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full"><h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3><p className="text-xs">{rocket.desc}</p></div>:<div className="p-3 bg-gray-800/50 rounded-xl h-full text-xs text-gray-400"><p className="font-bold mb-2">👈 탄희야, 로켓을 눌러봐!</p><p>높이: 98m 정도야!</p><p>무게: 261만kg이나 된단다.</p><p>속도: 39,500km/h까지 달려!</p></div>}</div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-sm text-center">🗺️ 탄희의 미션 순서</h3>
+              <div className="flex gap-1">{missions.map((s,i)=><button key={i} onClick={()=>setMission(i)} className={`flex-1 p-2 rounded-lg text-center ${mission===i?'bg-gradient-to-br from-blue-600 to-purple-600':'bg-gray-800/50'}`}><div className="text-lg">{s.emoji}</div><div className="text-xs">{i+1}</div></button>)}</div>
+              <div className="p-3 bg-indigo-900/30 rounded-xl"><h4 className="font-bold text-indigo-300 text-sm">{missions[mission].title}</h4><p className="text-xs mt-1">{missions[mission].desc}</p></div>
+            </div>
+            <div className="p-3 bg-gradient-to-br from-amber-900/30 to-red-900/30 rounded-xl border border-amber-500/10">
+              <div className="flex items-center justify-between">
+                <h3 className="font-bold text-sm text-amber-200">🔥 탄희의 발사 콘솔</h3>
+                <div className="text-2xl">{launchInfo.icon}</div>
+              </div>
+              <p className="text-base font-bold text-white mt-2">{launchInfo.title}</p>
+              <p className="text-xs text-gray-200 leading-relaxed mt-1">{launchInfo.desc}</p>
+              <p className="text-[11px] text-amber-200 bg-black/30 rounded-md px-2 py-1 mt-2 border border-amber-500/20">🧱 레고 상상 팁: {launchInfo.lego}</p>
+              <div className="flex gap-2 mt-3">
+                <button onClick={()=>setLaunchStage(s=>Math.max(0,s-1))} className="flex-1 px-3 py-2 text-xs rounded-lg bg-gray-800/60 border border-gray-600/40" disabled={launchStage===0}>이전</button>
+                <button onClick={()=>setLaunchStage(s=>s===launchTimeline.length-1?0:s+1)} className="flex-1 px-3 py-2 text-xs rounded-lg bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
+                  {launchStage===launchTimeline.length-1?'다시 시작':'다음 단계'}
+                </button>
+              </div>
+            </div>
+            <div className="p-3 bg-gradient-to-br from-blue-900/30 to-indigo-900/30 rounded-xl border border-blue-500/10 space-y-2">
+              <h3 className="font-bold text-sm text-blue-200 text-center">🛰️ 탄희의 우주 여행 스토리북</h3>
+              <div className="flex justify-center gap-1">{flightStories.map((_,i)=><button key={i} onClick={()=>setFlightStage(i)} className={`w-7 h-7 rounded-full text-xs font-bold ${flightStage===i?'bg-gradient-to-br from-blue-500 to-purple-500':'bg-gray-800/50'}`}>{i+1}</button>)}</div>
+              <div className="bg-black/30 rounded-xl p-3 text-xs">
+                <p className="text-sm font-bold text-white">{flightInfo.title}</p>
+                <p className="text-gray-200 mt-1 leading-relaxed">{flightInfo.desc}</p>
+                <p className="text-[11px] text-cyan-200 mt-2">🧱 레고 상상 팁: {flightInfo.tip}</p>
+              </div>
+            </div>
+            <div className="p-3 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl">
+              <h3 className="font-bold text-cyan-300 text-sm mb-1">👨‍🚀 탄희가 응원할 승무원</h3>
+              <div className="grid grid-cols-2 gap-1 text-xs"><div>🇺🇸 Reid Wiseman</div><div>🇺🇸 Victor Glover</div><div>🇺🇸 Christina Koch</div><div>🇨🇦 Jeremy Hansen</div></div>
+            </div>
           </div>
-          <div className="space-y-2">
-            <h3 className="font-bold text-sm text-center">🗺️ 탄희의 미션 순서</h3>
-            <div className="flex gap-1">{missions.map((s,i)=><button key={i} onClick={()=>setMission(i)} className={`flex-1 p-2 rounded-lg text-center ${mission===i?'bg-gradient-to-br from-blue-600 to-purple-600':'bg-gray-800/50'}`}><div className="text-lg">{s.emoji}</div><div className="text-xs">{i+1}</div></button>)}</div>
-            <div className="p-3 bg-indigo-900/30 rounded-xl"><h4 className="font-bold text-indigo-300 text-sm">{missions[mission].title}</h4><p className="text-xs mt-1">{missions[mission].desc}</p></div>
-          </div>
-          <div className="p-3 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl">
-            <h3 className="font-bold text-cyan-300 text-sm mb-1">👨‍🚀 탄희가 응원할 승무원</h3>
-            <div className="grid grid-cols-2 gap-1 text-xs"><div>🇺🇸 Reid Wiseman</div><div>🇺🇸 Victor Glover</div><div>🇺🇸 Christina Koch</div><div>🇨🇦 Jeremy Hansen</div></div>
-          </div>
-        </div>
-      );
+        );
+      };
 
       const Quiz = () => {
         const handleAns = i => { if(!showAns){setShowAns(true);if(i===quizzes[qNum].a)setQuizScore(s=>s+1);} };
