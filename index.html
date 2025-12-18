@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>달 탐험 대모험!</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    .animate-bounce { animation: bounce 1s infinite; }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+      50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+    }
+    @keyframes pulse {
+      50% { opacity: .5; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const MoonExplorer = () => {
+      const [section, setSection] = useState('home');
+      const [quizScore, setQuizScore] = useState(0);
+      const [qNum, setQNum] = useState(0);
+      const [showAns, setShowAns] = useState(false);
+      const [rocket, setRocket] = useState(null);
+      const [mission, setMission] = useState(0);
+      const [stars, setStars] = useState([]);
+      const [modal, setModal] = useState(null);
+
+      useEffect(() => {
+        setStars(Array.from({length:40},(_,i)=>({id:i,l:Math.random()*100,t:Math.random()*100,s:Math.random()*3+1,d:Math.random()*2})));
+      }, []);
+
+      const earthCards = [
+        {id:'birth',title:'달의 탄생',emoji:'🌙',color:'from-blue-900/50 to-blue-800/50',short:'45억 년 전 거대 충돌!',
+          detail:{desc:'약 45억 년 전, 화성만 한 크기의 행성 "테이아"가 아기 지구와 충돌했어요!\n\n이 거대한 충돌로 엄청난 양의 암석 조각들이 우주로 튀어나갔고, 이 조각들이 모여서 달이 되었답니다.\n\n처음 달이 생겼을 때는 지구에서 겨우 22,500km 떨어져 있었어요. 지금은 384,400km나 떨어져 있죠!\n\n달은 매년 3.8cm씩 지구에서 멀어지고 있어요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Lunar_libration_with_phase_Oct_2007_450px.gif/220px-Lunar_libration_with_phase_Oct_2007_450px.gif',vid:'https://www.youtube.com/embed/6SrsZVdU740'}},
+        {id:'size',title:'크기 비교',emoji:'📏',color:'from-purple-900/50 to-purple-800/50',short:'달은 지구의 1/4!',
+          detail:{desc:'달의 지름은 약 3,474km로 지구(12,742km)의 약 1/4 크기예요.\n\n재미있는 사실!\n\n하늘에서 태양과 달이 거의 같은 크기로 보이죠? 태양은 달보다 400배 크지만, 400배 더 멀리 있어서 같은 크기로 보이는 거예요!\n\n이 우연 덕분에 멋진 개기일식을 볼 수 있답니다.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/Bz9D6xba9Og'}},
+        {id:'tide',title:'밀물과 썰물',emoji:'🌊',color:'from-green-900/50 to-green-800/50',short:'달이 바다를 움직여요!',
+          detail:{desc:'달의 중력이 지구의 바닷물을 끌어당겨서 밀물과 썰물이 생겨요!\n\n달 쪽 바다는 달에게 끌려서 불룩해지고, 반대쪽도 원심력 때문에 불룩해져요.\n\n그래서 하루에 두 번씩 밀물과 썰물이 일어나죠.\n\n보름달이나 초승달 때는 조수 차이가 가장 커요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tide_type.svg/300px-Tide_type.svg.png',vid:'https://www.youtube.com/embed/3RdkXs8BibE'}},
+        {id:'quake',title:'문퀘이크',emoji:'🌋',color:'from-orange-900/50 to-orange-800/50',short:'달에도 지진이!',
+          detail:{desc:'달에도 지진이 있어요! "문퀘이크"라고 불러요.\n\n아폴로 우주비행사들이 설치한 지진계가 28번의 문퀘이크를 기록했어요.\n\n지구의 지진은 몇 초~몇 분이면 끝나지만, 문퀘이크는 무려 1시간까지 계속돼요!\n\n달에는 물이 없어서 진동이 쉽게 사라지지 않거든요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Apollo_11_Lunar_Laser_Ranging_Experiment.jpg/220px-Apollo_11_Lunar_Laser_Ranging_Experiment.jpg',vid:'https://www.youtube.com/embed/VW2xRR75lKE'}}
+      ];
+
+      const mythCards = [
+        {id:'selene',title:'셀레네',country:'🇬🇷 그리스',color:'from-amber-900/50 to-yellow-900/50',short:'은빛 마차의 달 여신!',
+          detail:{desc:'셀레네는 그리스 신화의 달의 여신이에요.\n\n매일 밤 두 마리의 하얀 말이 끄는 은빛 마차를 타고 하늘을 가로질러요.\n\n오빠 헬리오스(태양의 신)가 낮에 하늘을 지나면, 셀레네가 밤을 맡아요.\n\n셀레네는 양치기 엔디미온과 사랑에 빠졌어요. 제우스가 엔디미온을 영원히 잠들게 해서, 셀레네는 매일 밤 그를 보러 갔다고 해요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/BIuO6g5mx7Q'}},
+        {id:'artemis',title:'아르테미스',country:'🏹 그리스',color:'from-pink-900/50 to-purple-900/50',short:'NASA 이름의 유래!',
+          detail:{desc:'아르테미스는 사냥과 달의 여신이에요. 태양의 신 아폴로의 쌍둥이 자매죠!\n\n활과 화살의 명수로, 숲속 동물들의 수호자예요.\n\nNASA가 새 달 탐사를 "아르테미스"라고 이름 지은 이유가 있어요.\n\n아폴로(오빠)가 처음 달에 갔으니, 이번엔 여동생 차례라는 뜻이죠!\n\n아르테미스로 최초의 여성이 달에 갈 거예요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Diane_de_Versailles_Leochares.jpg/170px-Diane_de_Versailles_Leochares.jpg',vid:'https://www.youtube.com/embed/yvBqkcKhKNg'}},
+        {id:'tsuku',title:'츠쿠요미',country:'🇯🇵 일본',color:'from-rose-900/50 to-red-900/50',short:'달을 읽는 자!',
+          detail:{desc:'츠쿠요미(月読)는 일본 신화의 달의 신이에요.\n\n이름은 "달(月)을 읽는(読) 자"라는 뜻이에요.\n\n창조신 이자나기의 오른쪽 눈에서 태어났어요.\n\n태양의 여신 아마테라스, 바다의 신 스사노오와 함께 가장 중요한 세 신이에요.\n\n옛날 일본 사람들은 달을 보고 날짜와 계절을 알았어요.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/rAw8U5e_-ZI'}},
+        {id:'change',title:'창어',country:'🇨🇳 중국',color:'from-yellow-900/50 to-amber-900/50',short:'중추절의 주인공!',
+          detail:{desc:'창어(嫦娥)는 중국 신화에서 달에 사는 여신이에요.\n\n전설에 따르면, 창어가 불사의 약을 먹고 달로 날아갔다고 해요.\n\n지금도 달에서 옥토끼와 함께 살고 있대요!\n\n매년 음력 8월 15일 중추절에 중국 사람들은 달을 보며 창어를 기억해요.\n\n중국의 달 탐사선 이름도 "창어"예요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/220px-FullMoon2010.jpg',vid:'https://www.youtube.com/embed/l8UIXfp0Bxg'}}
+      ];
+
+      const apolloCards = [
+        {id:'a11',title:'아폴로 11호',emoji:'🌙',color:'from-orange-900/50 to-red-900/50',short:'인류 최초 달 착륙!',
+          detail:{desc:'1969년 7월 20일, 닐 암스트롱이 인류 최초로 달에!\n\n"이것은 한 사람에게는 작은 한 걸음이지만, 인류에게는 위대한 도약입니다."\n\n암스트롱과 버즈 올드린은 달에서 2시간 31분 동안 걸어다녔어요.\n\n성조기를 꽂고, 21.5kg의 달 돌을 가져왔죠.\n\n전 세계 6억 명이 TV로 지켜봤어요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/200px-Aldrin_Apollo_11_original.jpg',vid:'https://www.youtube.com/embed/S9HdPi9Ikhk'}},
+        {id:'a13',title:'아폴로 13호',emoji:'🆘',color:'from-red-900/50 to-rose-900/50',short:'극적인 생환!',
+          detail:{desc:'1970년 4월, 아폴로 13호는 대재앙을 만났어요.\n\n"휴스턴, 문제가 생겼습니다."\n\n산소 탱크가 폭발! 전기와 산소가 부족해졌어요!\n\nNASA 과학자들과 우주비행사들이 힘을 합쳐 기적적으로 문제를 해결했어요.\n\n결국 세 명 모두 무사히 지구로 돌아왔어요!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Apollo13-load_on_deck_-_GPN-2000-001313.jpg/220px-Apollo13-load_on_deck_-_GPN-2000-001313.jpg',vid:'https://www.youtube.com/embed/C2w6pe0kxag'}},
+        {id:'stats',title:'아폴로 기록',emoji:'📊',color:'from-blue-900/50 to-indigo-900/50',short:'놀라운 숫자들!',
+          detail:{desc:'아폴로 프로그램의 기록!\n\n🚀 총 17번의 아폴로 미션\n🌙 6번의 달 착륙 성공\n👨‍🚀 12명이 달을 걸었어요\n🪨 382kg 달 암석 수집\n⏱️ 80시간 이상 달 표면 활동\n🚗 아폴로 15~17호는 월면차도!\n\n마지막 달 방문은 1972년 아폴로 17호!\n\n50년 만에 아르테미스가 다시 갑니다!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Apollo_17_Lunar_Roving_Vehicle.jpg/220px-Apollo_17_Lunar_Roving_Vehicle.jpg',vid:'https://www.youtube.com/embed/xc1SyiF8Qok'}},
+        {id:'legacy',title:'아폴로의 유산',emoji:'🎁',color:'from-purple-900/50 to-pink-900/50',short:'우리 생활 속 기술!',
+          detail:{desc:'아폴로 기술이 지금도 쓰여요!\n\n💻 컴퓨터 소형화 → 스마트폰!\n🍳 테프론 코팅 → 프라이팬!\n👟 우주복 기술 → 운동화 쿠션!\n🩺 달 사진 기술 → CAT 스캔!\n💧 우주 정수기 → 정수 필터!\n\n아폴로에 1달러 투자 → 7~14달러 가치 창출!',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Apollo_11_Crew.jpg/220px-Apollo_11_Crew.jpg',vid:'https://www.youtube.com/embed/4XvVs4sHlJc'}}
+      ];
+
+      const rockets = [
+        {id:'las',name:'탈출 시스템',color:'#FFF',top:'0%',h:'8%',desc:'비상 탈출 로켓!'},
+        {id:'orion',name:'오리온',color:'#F5F5F5',top:'8%',h:'12%',desc:'우주인 4명 탑승!'},
+        {id:'icps',name:'2단 로켓',color:'#F97316',top:'20%',h:'15%',desc:'달 방향 추진!'},
+        {id:'core',name:'연료탱크',color:'#EA580C',top:'35%',h:'40%',desc:'73만 갤런 연료!'},
+        {id:'boost',name:'부스터',color:'#E5E5E5',top:'50%',h:'25%',desc:'추력 75% 담당!'},
+        {id:'eng',name:'RS-25',color:'#374151',top:'75%',h:'8%',desc:'셔틀 엔진 4개!'}
+      ];
+
+      const missions = [
+        {title:'발사!',desc:'케네디 우주센터 발사!',emoji:'🔥'},
+        {title:'지구 궤도',desc:'우주선 점검!',emoji:'🌍'},
+        {title:'달로!',desc:'4일간 여행 시작!',emoji:'✨'},
+        {title:'달 뒷면',desc:'45만km 도달!',emoji:'🌙'},
+        {title:'귀환',desc:'태평양 착수!',emoji:'🪂'}
+      ];
+
+      const quizzes = [
+        {q:'SLS 로켓은 무엇보다 높을까요?',o:['자유의 여신상','에펠탑','남산타워'],a:0},
+        {q:'달까지 며칠?',o:['1일','4일','30일'],a:1},
+        {q:'오리온에 몇 명?',o:['2명','4명','10명'],a:1},
+        {q:'달에 첫 발을 내디딘 사람?',o:['버즈 올드린','닐 암스트롱','마이클 콜린스'],a:1},
+        {q:'그리스 달의 여신?',o:['아테나','셀레네','헤라'],a:1}
+      ];
+
+      const Modal = ({card,onClose,isMyth}) => (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-3" onClick={onClose}>
+          <div className="bg-gradient-to-br from-gray-900 to-indigo-950 rounded-2xl max-w-md w-full max-h-[85vh] overflow-y-auto border border-indigo-500/30" onClick={e=>e.stopPropagation()}>
+            <div className="p-4">
+              <div className="flex justify-between items-center mb-3">
+                <h2 className="text-lg font-bold text-yellow-300">{isMyth?card.country:card.emoji} {card.title}</h2>
+                <button onClick={onClose} className="text-2xl text-gray-400 hover:text-white">✕</button>
+              </div>
+              {card.detail.img && <img src={card.detail.img} alt={card.title} className="w-full h-36 object-cover rounded-xl mb-3"/>}
+              <p className="text-sm whitespace-pre-line mb-4 text-gray-200 leading-relaxed">{card.detail.desc}</p>
+              {card.detail.vid && <div className="rounded-xl overflow-hidden aspect-video"><iframe src={card.detail.vid} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/></div>}
+            </div>
+          </div>
+        </div>
+      );
+
+      const Card = ({card,onClick,isMyth}) => (
+        <button onClick={onClick} className={`p-3 bg-gradient-to-r ${card.color} rounded-xl text-left hover:scale-105 transition-all hover:ring-2 hover:ring-yellow-400/50 w-full`}>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-lg">{isMyth?card.country?.split(' ')[0]:card.emoji}</span>
+            <h3 className="font-bold text-sm">{card.title}</h3>
+          </div>
+          <p className="text-xs text-gray-300">{card.short}</p>
+          <p className="text-xs text-yellow-400 mt-1">👆 클릭!</p>
+        </button>
+      );
+
+      const Home = () => (
+        <div className="text-center space-y-5">
+          <div className="text-5xl animate-bounce">🚀</div>
+          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">달 탐험 대모험!</h1>
+          <p className="text-blue-200">아르테미스 2호와 함께!</p>
+          <div className="grid grid-cols-2 gap-3">
+            {[{id:'earth',icon:'🌍',name:'지구와 달',c:'from-blue-600 to-cyan-600'},{id:'myth',icon:'🏛️',name:'달의 신화',c:'from-purple-600 to-pink-600'},{id:'apollo',icon:'🚀',name:'아폴로',c:'from-orange-600 to-red-600'},{id:'artemis',icon:'🌙',name:'아르테미스',c:'from-indigo-600 to-purple-600'}].map(s=>
+              <button key={s.id} onClick={()=>setSection(s.id)} className={`p-4 bg-gradient-to-br ${s.c} rounded-xl hover:scale-105 transition-transform`}>
+                <div className="text-3xl mb-2">{s.icon}</div>
+                <div className="font-bold text-sm">{s.name}</div>
+              </button>
+            )}
+          </div>
+          <div className="p-4 bg-yellow-500/20 rounded-xl border border-yellow-500/50">
+            <p className="text-yellow-300 font-bold">⏰ 발사 예정</p>
+            <p className="text-xl font-bold text-white mt-1">2026년 4월!</p>
+          </div>
+        </div>
+      );
+
+      const Earth = () => (
+        <div className="space-y-4">
+          <h2 className="text-xl font-bold text-center">🌍 지구와 달 🌙</h2>
+          <p className="text-center text-xs text-blue-300">👆 카드를 클릭해서 영상도 보세요!</p>
+          <div className="flex justify-center items-center gap-4 py-2">
+            <div className="text-center"><div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full animate-pulse"/><p className="mt-1 font-bold text-xs">지구</p></div>
+            <div className="text-gray-400 text-xs">384,400km</div>
+            <div className="text-center"><div className="w-4 h-4 bg-gradient-to-br from-gray-300 to-gray-500 rounded-full"/><p className="mt-1 font-bold text-xs">달</p></div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">{earthCards.map(c=><Card key={c.id} card={c} onClick={()=>setModal({...c,isMyth:false})}/>)}</div>
+        </div>
+      );
+
+      const Myth = () => (
+        <div className="space-y-4">
+          <h2 className="text-xl font-bold text-center">🏛️ 세계의 달 신화</h2>
+          <p className="text-center text-xs text-pink-300">👆 카드를 클릭해서 영상도 보세요!</p>
+          <div className="space-y-3">{mythCards.map(c=><Card key={c.id} card={c} onClick={()=>setModal({...c,isMyth:true})} isMyth/>)}</div>
+        </div>
+      );
+
+      const Apollo = () => (
+        <div className="space-y-4">
+          <h2 className="text-xl font-bold text-center">🚀 아폴로 달 탐사</h2>
+          <p className="text-center text-xs text-orange-300">👆 카드를 클릭해서 영상도 보세요!</p>
+          <div className="grid grid-cols-2 gap-3">{apolloCards.map(c=><Card key={c.id} card={c} onClick={()=>setModal({...c,isMyth:false})}/>)}</div>
+        </div>
+      );
+
+      const Artemis = () => (
+        <div className="space-y-4">
+          <h2 className="text-xl font-bold text-center">🌙 아르테미스 2호</h2>
+          <div className="flex gap-3">
+            <div className="w-1/3 bg-gray-900/50 rounded-xl p-2">
+              <p className="text-xs text-center mb-2 text-gray-400">클릭!</p>
+              <div className="relative h-40 mx-auto w-10">
+                {rockets.map((p,i)=><button key={p.id} onClick={()=>setRocket(p)} className={`absolute w-full border border-gray-600 hover:scale-110 transition ${rocket?.id===p.id?'ring-2 ring-yellow-400':''}`} style={{top:p.top,height:p.h,backgroundColor:p.color,borderRadius:i===0?'50% 50% 0 0':'2px'}}/>)}
+              </div>
+            </div>
+            <div className="w-2/3">{rocket?<div className="p-3 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-xl h-full"><h3 className="font-bold text-sm text-yellow-300 mb-1">{rocket.name}</h3><p className="text-xs">{rocket.desc}</p></div>:<div className="p-3 bg-gray-800/50 rounded-xl h-full text-xs text-gray-400"><p className="font-bold mb-2">👈 로켓 클릭!</p><p>높이: 98m</p><p>무게: 261만kg</p><p>속도: 39,500km/h</p></div>}</div>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-bold text-sm text-center">🗺️ 미션</h3>
+            <div className="flex gap-1">{missions.map((s,i)=><button key={i} onClick={()=>setMission(i)} className={`flex-1 p-2 rounded-lg text-center ${mission===i?'bg-gradient-to-br from-blue-600 to-purple-600':'bg-gray-800/50'}`}><div className="text-lg">{s.emoji}</div><div className="text-xs">{i+1}</div></button>)}</div>
+            <div className="p-3 bg-indigo-900/30 rounded-xl"><h4 className="font-bold text-indigo-300 text-sm">{missions[mission].title}</h4><p className="text-xs mt-1">{missions[mission].desc}</p></div>
+          </div>
+          <div className="p-3 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl">
+            <h3 className="font-bold text-cyan-300 text-sm mb-1">👨‍🚀 승무원</h3>
+            <div className="grid grid-cols-2 gap-1 text-xs"><div>🇺🇸 Reid Wiseman</div><div>🇺🇸 Victor Glover</div><div>🇺🇸 Christina Koch</div><div>🇨🇦 Jeremy Hansen</div></div>
+          </div>
+        </div>
+      );
+
+      const Quiz = () => {
+        const handleAns = i => { if(!showAns){setShowAns(true);if(i===quizzes[qNum].a)setQuizScore(s=>s+1);} };
+        const next = () => { setShowAns(false); setQNum(n=>n+1); };
+        const reset = () => { setQNum(0); setQuizScore(0); setShowAns(false); };
+        return (
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold text-center">🎮 달 퀴즈!</h2>
+            <div className="text-center"><span className="text-2xl font-bold text-yellow-400">{quizScore}</span><span className="text-gray-400">/{quizzes.length}</span></div>
+            {qNum<quizzes.length?(
+              <div className="p-4 bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl">
+                <p className="text-xs text-gray-400 mb-2">문제 {qNum+1}/{quizzes.length}</p>
+                <h3 className="font-bold mb-3">{quizzes[qNum].q}</h3>
+                <div className="space-y-2">{quizzes[qNum].o.map((o,i)=><button key={i} onClick={()=>handleAns(i)} disabled={showAns} className={`w-full p-2 rounded-lg text-left text-sm ${showAns?(i===quizzes[qNum].a?'bg-green-600':'bg-gray-700/50'):'bg-gray-800/50 hover:bg-gray-700'}`}>{i+1}. {o}</button>)}</div>
+                {showAns&&<button onClick={next} className="mt-3 w-full p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-bold text-sm">다음 →</button>}
+              </div>
+            ):(
+              <div className="p-6 bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl text-center">
+                <div className="text-4xl mb-2">🎉</div>
+                <h3 className="text-xl font-bold mb-2">완료!</h3>
+                <p className="text-lg">{quizScore===quizzes.length?'완벽! 🌟':quizScore>=3?'잘했어요! 👏':'다시 도전! 💪'}</p>
+                <button onClick={reset} className="mt-4 px-6 py-2 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg font-bold">다시!</button>
+              </div>
+            )}
+          </div>
+        );
+      };
+
+      const nav = [{id:'home',n:'🏠'},{id:'earth',n:'🌍'},{id:'myth',n:'🏛️'},{id:'apollo',n:'🚀'},{id:'artemis',n:'🌙'},{id:'quiz',n:'🎮'}];
+
+      return (
+        <div className="min-h-screen bg-gradient-to-b from-gray-900 via-indigo-950 to-black text-white relative overflow-hidden">
+          {stars.map(s=><div key={s.id} className="absolute rounded-full bg-white animate-pulse" style={{left:`${s.l}%`,top:`${s.t}%`,width:`${s.s}px`,height:`${s.s}px`,animationDelay:`${s.d}s`,opacity:0.6}}/>)}
+          <div className="relative z-10 max-w-md mx-auto p-4 pb-20">
+            {section==='home'&&<Home/>}
+            {section==='earth'&&<Earth/>}
+            {section==='myth'&&<Myth/>}
+            {section==='apollo'&&<Apollo/>}
+            {section==='artemis'&&<Artemis/>}
+            {section==='quiz'&&<Quiz/>}
+          </div>
+          <nav className="fixed bottom-0 left-0 right-0 bg-gray-900/95 border-t border-gray-700 z-20">
+            <div className="max-w-md mx-auto flex justify-around py-2">
+              {nav.map(n=><button key={n.id} onClick={()=>setSection(n.id)} className={`p-2 text-xl ${section===n.id?'scale-125':''}`}>{n.n}</button>)}
+            </div>
+          </nav>
+          {modal&&<Modal card={modal} onClose={()=>setModal(null)} isMyth={modal.isMyth}/>}
+        </div>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<MoonExplorer />);
+  </script>
+</body>
+</html>
